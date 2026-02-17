@@ -1,4 +1,4 @@
-# 🔥 SHODAN VulnScopeX v6.0 ULTIMATE
+# 🔥 SHODAN VulnScopeX v6.0 ULTIMATE by TeamCyberOps
 
 **Enterprise Vulnerability Scanner + 85+ REST APIs + Real-Time CLI GUI + Advanced Exploitation**
 
@@ -10,16 +10,16 @@
 
 | 📚 Section | 📖 Purpose | 🔗 Link |  
 |:---:|:---|:---:|
-| **📦 Installation** | Complete setup guide (Windows/Linux/Mac) | [doc/INSTALLATION.md](doc/INSTALLATION.md) |
-| **🚀 Quick Start** | 60-second startup guide | [doc/QUICKSTART.md](doc/QUICKSTART.md) |
-| **✨ v6.0 Features** | Complete 85+ feature list | [doc/V6_FEATURES.md](doc/V6_FEATURES.md) |
-| **🖥️ CLI GUI Guide** | Interactive terminal interface | [doc/CLI_GUI.md](doc/CLI_GUI.md) |
-| **🔌 APIs (85+)** | Complete REST API documentation | [doc/APIs.md](doc/APIs.md) |
-| **🛠️ Modules** | 7 core modules overview | [doc/MODULES.md](doc/MODULES.md) |
-| **⚙️ Configuration** | Environment & settings | [doc/CONFIGURATION.md](doc/CONFIGURATION.md) |
-| **🆘 Troubleshooting** | Common issues & solutions | [doc/TROUBLESHOOTING.md](doc/TROUBLESHOOTING.md) |
-| **📊 Advanced Topics** | Deep technical documentation | [doc/HOW_70PLUS_FEATURES_IMPLEMENTED.md](doc/HOW_70PLUS_FEATURES_IMPLEMENTED.md) |
-| **📚 Full Guide** | Complete original documentation | [doc/README_FULL.md](doc/README_FULL.md) |
+| **📦 Installation** | Complete setup guide (Windows/Linux/Mac) | [INSTALLATION.md](doc/INSTALLATION.md) |
+| **🚀 Quick Start** | 60-second startup guide | [QUICKSTART.md](doc/QUICKSTART.md) |
+| **✨ v6.0 Features** | Complete 85+ feature list | [V6_FEATURES.md](doc/V6_FEATURES.md) |
+| **🖥️ CLI GUI Guide** | Interactive terminal interface | [CLI_GUI.md](doc/CLI_GUI.md) |
+| **🔌 APIs (85+)** | Complete REST API documentation | [APIs.md](doc/APIs.md) |
+| **🛠️ Modules** | 7 core modules overview | [MODULES.md](doc/MODULES.md) |
+| **⚙️ Configuration** | Environment & settings | [CONFIGURATION.md](doc/CONFIGURATION.md) |
+| **🆘 Troubleshooting** | Common issues & solutions | [TROUBLESHOOTING.md](doc/TROUBLESHOOTING.md) |
+| **📊 Advanced Topics** | Deep technical documentation | [HOW_70PLUS_FEATURES_IMPLEMENTED.md](doc/HOW_70PLUS_FEATURES_IMPLEMENTED.md) |
+| **📚 Full Guide** | Complete original documentation | [README_FULL.md](doc/README_FULL.md) |
 
 ---
 
@@ -35,7 +35,7 @@ Complete REST API with endpoints for:
 - Web application security testing (12+ operations)
 - Advanced reporting & analytics (12+ operations)
 
-**→ See [doc/APIs.md](doc/APIs.md) for complete API reference**
+**→ See [APIs.md](doc/APIs.md) for complete API reference**
 
 ### 🖥️ **Interactive CLI GUI Interface** 
 Terminal-based interface featuring:
@@ -71,11 +71,11 @@ Automated exploitation capabilities:
 
 ## 🎨 SCREENSHOTS & VISUALS
 
-### Web Dashboard
+### CLI Dashboard
 ![Dashboard](assets/dashboard.png)
 *Interactive web dashboard with real-time vulnerability visualization*
 
-### CLI GUI Interface
+### CLI GUI LAUNCHER
 ![CLI GUI](assets/GUI-launch.png)
 *Interactive terminal menu system - v6.0 new feature*
 
@@ -90,27 +90,24 @@ Automated exploitation capabilities:
 ---
 
 ### **Quick Setup**
-```bash
+
 # 1. Install dependencies
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 # 2. Set API key
-echo "SHODAN_API_KEY=your_api_key" > .env
+    echo "SHODAN_API_KEY=your_api_key" > .env
 
 # 3. Start server
-python start_premium.py
+    python start_premium.py
 
 # 4. Access dashboard
-Open: http://localhost:5000
-```
+    Open: http://localhost:5000
 
 ### **Or use CLI GUI**
-```bash
-python scanner_premium.py
+    python scanner_premium.py
 # Interactive terminal menu system
-```
 
-**→ Detailed instructions: [doc/QUICKSTART.md](doc/QUICKSTART.md)**
+**→ Detailed instructions: [QUICKSTART.md](doc/QUICKSTART.md)**
 
 ---
 
@@ -294,10 +291,10 @@ All documentation is organized in the `doc/` folder:
 ## 📞 SUPPORT & RESOURCES
 
 **Need Help?**
-- 📖 **Documentation** → [doc/ folder](doc/)
-- 🆘 **Troubleshooting** → [doc/TROUBLESHOOTING.md](doc/TROUBLESHOOTING.md)
-- ⚙️ **Configuration** → [doc/CONFIGURATION.md](doc/CONFIGURATION.md)
-- 🚀 **Quick Start** → [doc/QUICKSTART.md](doc/QUICKSTART.md)
+- 📖 **Documentation** → [doc/](doc/)
+- 🆘 **Troubleshooting** → [TROUBLESHOOTING.md](doc/TROUBLESHOOTING.md)
+- ⚙️ **Configuration** → [CONFIGURATION.md](doc/CONFIGURATION.md)
+- 🚀 **Quick Start** → [QUICKSTART.md](doc/QUICKSTART.md)
 
 **Report Issues:**
 - Check [Troubleshooting Guide](doc/TROUBLESHOOTING.md)
@@ -321,14 +318,15 @@ All documentation is organized in the `doc/` folder:
 
 ## 🔗 QUICK NAVIGATION
 
-- **Install:** [doc/INSTALLATION.md](doc/INSTALLATION.md)
-- **APIs:** [doc/APIs.md](doc/APIs.md) (85+ endpoints)
-- **Features:** [doc/V6_FEATURES.md](doc/V6_FEATURES.md) (85+ features)
-- **CLI GUI:** [doc/CLI_GUI.md](doc/CLI_GUI.md) (Terminal interface)
-- **Help:** [doc/TROUBLESHOOTING.md](doc/TROUBLESHOOTING.md)
+- **Install:** [INSTALLATION.md](doc/INSTALLATION.md)
+- **APIs:** [APIs.md](doc/APIs.md) (85+ endpoints)
+- **Features:** [V6_FEATURES.md](doc/V6_FEATURES.md) (85+ features)
+- **CLI GUI:** [CLI_GUI.md](doc/CLI_GUI.md) (Terminal interface)
+- **Help:** [TROUBLESHOOTING.md](doc/TROUBLESHOOTING.md)
 
 ---
 
 **Ready to get started?** → [Installation Guide](doc/INSTALLATION.md)  
 **Want quick access?** → [60-Second Quick Start](doc/QUICKSTART.md)  
 **Explore all APIs?** → [85+ API Endpoints](doc/APIs.md)
+
