@@ -378,7 +378,7 @@ All documentation is organized in the `doc/` folder:
       </td>
             <td align="center">
         <a href="https://github.com/muhammadtaharana">
-          <img src="https://github.com/muhammadtaharana.jpg" width="80px;" style="border-radius:50%" alt="2.0"/><br />
+          <img src="https://github.com/muhammadtaharana.png" width="80px;" style="border-radius:50%" alt="2.0"/><br />
           <sub><b>2.0²·⁰ (Core)</b></sub>
         </a>
       </td>
@@ -397,5 +397,6 @@ All documentation is organized in the `doc/` folder:
     TEAM: [r00t:~#] | n1xr00t | zero_trst | 2.0²·⁰ <br>
     -----END PGP SIGNATURE-----
   </p>
+
 
 
