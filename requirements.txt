@@ -1,0 +1,7 @@
+shodan==1.31.0
+flask==3.1.1
+flask-cors==6.0.2
+requests==2.32.5
+colorama==0.4.6
+emoji==2.15.0
+schedule==1.2.2

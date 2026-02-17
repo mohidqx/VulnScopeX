@@ -1,0 +1,185 @@
+[2026-02-17 00:29:16,617] INFO: 🔍 Scanning: product:"Node.js"
+[2026-02-17 00:29:16,619] INFO: 🔍 Scanning: ssl.cert.expired:true
+[2026-02-17 00:29:16,620] INFO: 🔍 Scanning: http.title:"Dashboard" port:3000
+[2026-02-17 00:29:16,622] INFO: 🔍 Scanning: port:8080 http.status:200
+[2026-02-17 00:29:16,623] INFO: 🔍 Scanning: port:3000 http.status:200
+[2026-02-17 00:29:16,624] INFO: 🔍 Scanning: cgi-bin authenticated:false
+[2026-02-17 00:29:16,626] INFO: 🔍 Scanning: http.robots "Disallow"
+[2026-02-17 00:29:16,627] INFO: 🔍 Scanning: mongodb
+[2026-02-17 00:29:16,631] INFO: 🔍 Scanning: redis
+[2026-02-17 00:29:16,633] INFO: 🔍 Scanning: elasticsearch open
+[2026-02-17 00:29:17,883] ERROR: Error scanning query 'http.title:"Dashboard" port:3000': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:29:17,883] ERROR: Error scanning query 'ssl.cert.expired:true': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:29:17,893] ERROR: Error scanning query 'port:3000 http.status:200': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:29:17,894] ERROR: Error scanning query 'port:8080 http.status:200': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:29:17,900] ERROR: Error scanning query 'product:"Node.js"': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:29:17,924] INFO: ✓ Query 'http.robots "Disallow"' completed: 0 results
+[2026-02-17 00:29:18,389] INFO: ✓ Query 'cgi-bin authenticated:false' completed: 0 results
+[2026-02-17 00:29:18,692] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,693] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,694] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,695] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,696] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,696] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,697] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,698] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,698] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,700] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,702] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,703] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,707] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,709] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,711] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,712] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,713] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,714] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,716] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,717] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,719] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,719] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,720] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,721] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,723] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,725] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,725] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,727] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,728] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,728] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,729] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,730] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,731] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,731] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,732] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,733] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,734] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,735] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,735] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:18,736] INFO: ✓ Query 'elasticsearch open' completed: 0 results
+[2026-02-17 00:29:19,182] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,193] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,208] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,224] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,241] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,266] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,283] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,284] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,298] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,307] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,308] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,308] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,309] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,310] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,321] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,332] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,340] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,369] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,381] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,390] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,400] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,401] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,410] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,411] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,413] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,415] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,425] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,426] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,447] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,456] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,467] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,477] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,479] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,489] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,490] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,502] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,510] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,523] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,536] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,546] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,547] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,547] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,558] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,571] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,572] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,584] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,595] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,606] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,617] ERROR: Database error: no such table: vulnerabilities
+[2026-02-17 00:29:19,618] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:19,618] INFO: ✓ Query 'redis' completed: 34 results
+[2026-02-17 00:29:20,034] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,034] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,034] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,035] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,036] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,036] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,037] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,038] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,038] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,039] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,039] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,040] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,041] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,042] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,043] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,043] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,044] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,044] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,045] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,045] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,046] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,046] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,047] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,047] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,048] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,048] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,049] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,049] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,050] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,050] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,051] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,051] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,052] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,052] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,053] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,053] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,054] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,054] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,056] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,058] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,058] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,059] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,060] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,060] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,061] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,061] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,062] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,062] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,063] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,063] ERROR: Error processing result: unsupported format string passed to NoneType.__format__
+[2026-02-17 00:29:20,064] INFO: ✓ Query 'mongodb' completed: 0 results
+[2026-02-17 00:34:10,584] INFO: [✓] Database initialized successfully
+[2026-02-17 00:34:17,868] INFO: 🔍 Scanning: product:"Node.js"
+[2026-02-17 00:34:17,869] INFO: 🔍 Scanning: ssl.cert.expired:true
+[2026-02-17 00:34:17,870] INFO: 🔍 Scanning: http.title:"Dashboard" port:3000
+[2026-02-17 00:34:17,871] INFO: 🔍 Scanning: port:8080 http.status:200
+[2026-02-17 00:34:17,872] INFO: 🔍 Scanning: port:3000 http.status:200
+[2026-02-17 00:34:17,874] INFO: 🔍 Scanning: cgi-bin authenticated:false
+[2026-02-17 00:34:17,880] INFO: 🔍 Scanning: http.robots "Disallow"
+[2026-02-17 00:34:17,887] INFO: 🔍 Scanning: mongodb
+[2026-02-17 00:34:17,888] INFO: 🔍 Scanning: redis
+[2026-02-17 00:34:17,890] INFO: 🔍 Scanning: elasticsearch open
+[2026-02-17 00:34:18,526] ERROR: Error scanning query 'port:3000 http.status:200': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:34:18,529] ERROR: Error scanning query 'product:"Node.js"': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:34:18,547] INFO: ✓ Query 'cgi-bin authenticated:false' completed: 0 results
+[2026-02-17 00:34:18,560] ERROR: Error scanning query 'port:8080 http.status:200': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:34:18,593] ERROR: Error scanning query 'http.title:"Dashboard" port:3000': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:34:18,627] ERROR: Error scanning query 'ssl.cert.expired:true': Insufficient query credits, please upgrade your API plan or wait for the monthly limit to reset
+[2026-02-17 00:34:18,677] INFO: ✓ Query 'http.robots "Disallow"' completed: 0 results
+[2026-02-17 00:34:21,708] INFO: ✓ Query 'elasticsearch open' completed: 39 results
+[2026-02-17 00:34:22,075] INFO: ✓ Query 'redis' completed: 50 results
+[2026-02-17 00:34:23,592] INFO: ✓ Query 'mongodb' completed: 50 results
+[2026-02-17 02:03:02,157] INFO: [✓] Database initialized successfully
+[2026-02-17 02:03:46,897] INFO: [✓] Database initialized successfully
+[2026-02-17 02:04:34,208] INFO: [✓] Database initialized successfully
+[2026-02-17 02:24:16,663] INFO: [✓] Database initialized successfully
+[2026-02-17 02:30:18,084] INFO: 🔍 Scanning: mongodb

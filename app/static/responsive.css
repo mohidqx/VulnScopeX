@@ -1,0 +1,787 @@
+/* ========================================
+   SHODAN VulnScopeX PRO v2.0
+   Responsive Design Stylesheet
+   Mobile & Tablet Optimization
+   Organization: TeamCyberOps
+   ======================================== */
+
+/* ==========================================
+   TABLET SCREENS (768px - 1024px)
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+    padding: 16px;
+  }
+
+  .col-4 {
+    flex-basis: 50%;
+  }
+
+  .col-6 {
+    flex-basis: 100%;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 12px;
+  }
+
+  .stat-value {
+    font-size: 1.875rem;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+}
+
+/* ==========================================
+   MOBILE SCREENS (480px - 768px)
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* LAYOUT ADJUSTMENTS */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  /* NAVIGATION */
+  .navbar {
+    padding: 12px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .navbar-content {
+    width: 100%;
+    gap: 8px;
+  }
+
+  /* GRID & COLUMNS */
+  .row {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .col,
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-6,
+  .col-8,
+  .col-12 {
+    flex-basis: 100% !important;
+    min-width: 100% !important;
+  }
+
+  /* TYPOGRAPHY */
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  /* CARDS & PANELS */
+  .card {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* STAT CARDS */
+  .stat-card {
+    padding: 12px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  /* BUTTONS */
+  .btn {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  .btn-sm {
+    width: auto;
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .btn-lg {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  button,
+  .btn {
+    margin-bottom: 8px;
+  }
+
+  /* FORMS */
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  /* TABLES */
+  .table {
+    font-size: 0.85rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 16px;
+  }
+
+  .table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    font-weight: 600;
+    color: var(--primary-text);
+  }
+
+  /* MODAL */
+  .modal-content {
+    width: 95%;
+    max-height: 95vh;
+    border-radius: 8px;
+  }
+
+  .modal-header {
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-body,
+  .modal-footer {
+    padding: 12px;
+  }
+
+  .modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+  }
+
+  /* CHARTS */
+  .chart-container {
+    height: 200px;
+    margin-bottom: 16px;
+  }
+
+  /* SIDEBAR MENU */
+  .sidebar-menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .sidebar-item {
+    flex: 1;
+    min-width: 150px;
+    border-right: 1px solid var(--border-color);
+    border-bottom: none;
+  }
+
+  .sidebar-item:last-child {
+    border-right: none;
+  }
+
+  .sidebar-link {
+    flex-direction: column;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 0.8rem;
+    gap: 4px;
+  }
+
+  .sidebar-link:hover,
+  .sidebar-link.active {
+    border-left: none;
+    border-bottom: 3px solid var(--accent-blue);
+    padding-bottom: 5px;
+  }
+
+  .sidebar-icon {
+    font-size: 1rem;
+  }
+
+  /* ALERTS */
+  .alert {
+    padding: 12px;
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .alert-icon {
+    font-size: 1rem;
+  }
+
+  /* BADGES */
+  .badge {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+
+  /* TABS */
+  .tabs {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .tab-link {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  /* SPACING ADJUSTMENTS */
+  .mt-xs,
+  .mt-sm,
+  .mt-md,
+  .mt-lg,
+  .mt-xl {
+    margin-top: 8px;
+  }
+
+  .mb-xs,
+  .mb-sm,
+  .mb-md,
+  .mb-lg,
+  .mb-xl {
+    margin-bottom: 8px;
+  }
+
+  .p-md,
+  .p-lg,
+  .p-xl {
+    padding: 12px;
+  }
+
+  /* UTILITIES */
+  .container {
+    padding: 12px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* PAGINATION */
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .page-item .page-link {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 16px 12px;
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE SCREENS (320px - 480px)
+   ========================================== */
+
+@media (max-width: 480px) {
+  /* LAYOUT */
+  .sidebar {
+    padding: 4px 0;
+  }
+
+  .main-content {
+    padding: 8px;
+  }
+
+  .navbar {
+    padding: 8px;
+  }
+
+  /* TYPOGRAPHY */
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .card-header {
+    margin-bottom: 8px;
+  }
+
+  .card-footer {
+    gap: 4px;
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+
+  /* STAT CARDS */
+  .stat-card {
+    padding: 8px;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  /* BUTTONS */
+  .btn {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  /* FORMS */
+  input,
+  textarea,
+  select {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  /* TABLES - Stack Vertically */
+  .table {
+    font-size: 0.8rem;
+  }
+
+  .table tr {
+    margin-bottom: 12px;
+  }
+
+  .table td {
+    padding: 6px 8px;
+    padding-left: 45%;
+  }
+
+  .table td:before {
+    font-size: 0.75rem;
+    left: 8px;
+  }
+
+  /* PAGE TITLE */
+  .page-title {
+    font-size: 1.25rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* SIDEBAR MENU */
+  .sidebar-link {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .sidebar-icon {
+    font-size: 0.9rem;
+    width: 1.2rem;
+  }
+
+  /* MODAL */
+  .modal-content {
+    width: 98%;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 8px;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+  }
+
+  /* CHARTS */
+  .chart-container {
+    height: 150px;
+  }
+
+  /* ALERT */
+  .alert {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  /* BADGE */
+  .badge {
+    padding: 2px 4px;
+    font-size: 0.65rem;
+  }
+
+  /* UTILITY SPACING */
+  .container {
+    padding: 8px;
+  }
+
+  .gap-md,
+  .gap-lg {
+    gap: 8px;
+  }
+
+  /* TEXT UTILITIES */
+  .text-center,
+  .text-left,
+  .text-right {
+    text-align: center;
+  }
+
+  /* HIDE UNNECESSARY on Small Screens */
+  .hide-mobile {
+    display: none !important;
+  }
+
+  /* BRAND & HEADER */
+  .navbar-brand {
+    font-size: 1.1rem;
+    gap: 8px;
+  }
+
+  /* SEARCH BOX */
+  .search-box {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .search-box input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* OVERFLOW TABLES */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ==========================================
+   LANDSCAPE ORIENTATION (Mobile)
+   ========================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 8px;
+  }
+
+  .chart-container {
+    height: 200px;
+  }
+
+  .page-header {
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .card {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+/* ==========================================
+   TOUCH DEVICE OPTIMIZATION
+   ========================================== */
+
+@media (hover: none) {
+  /* Larger touch targets */
+  .btn,
+  a,
+  .sidebar-link {
+    min-height: 44px; /* iOS recommended */
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Remove hover effects on touch */
+  .card:hover {
+    transform: none;
+  }
+
+  .btn:active {
+    opacity: 0.8;
+  }
+
+  /* Optimize form inputs */
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+
+  /* Touch-friendly spacing */
+  .sidebar-link {
+    padding: 12px 8px;
+  }
+}
+
+/* ==========================================
+   HIGH RESOLUTION SCREENS (Retina/4K)
+   ========================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  /* Slightly thinner borders for retina */
+  .card,
+  .btn,
+  input,
+  textarea,
+  select {
+    border-width: 0.5px;
+  }
+
+  /* Optimize text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ==========================================
+   DARK MODE SPECIFIC ADJUSTMENTS
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+  /* Matches system dark mode preference */
+  body {
+    background: var(--primary-bg);
+    color: var(--primary-text);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  /* Matches system light mode preference */
+  body.light-theme {
+    background: var(--primary-bg);
+    color: var(--primary-text);
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================
+   PRINT OPTIMIZATION
+   ========================================== */
+
+@media print {
+  .navbar,
+  .sidebar,
+  .btn-print,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20mm;
+  }
+
+  .card {
+    page-break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .table {
+    border-collapse: collapse;
+  }
+
+  .table th,
+  .table td {
+    border: 1px solid #ccc;
+    padding: 8pt;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+}

@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHODAN VulnScopeX PRO - Mind-Blowing Hacker Tool</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    
+    <!-- Custom Stylesheets (Organization: TeamCyberOps) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='theme.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0e27;
+            color: #e0e0e0;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        body.light-mode {
+            background: #f5f5f5;
+            color: #1a1a1a;
+        }
+
+        /* ============ NAVBAR ============ */
+        .navbar {
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.98), rgba(20, 25, 50, 0.98));
+            border-bottom: 3px solid #ff3b3b;
+            box-shadow: 0 8px 32px rgba(255, 59, 59, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .navbar:hover {
+            box-shadow: 0 12px 48px rgba(255, 59, 59, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        body.light-mode .navbar {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 245, 245, 0.98));
+            border-bottom-color: #ff3b3b;
+            box-shadow: 0 4px 16px rgba(255, 59, 59, 0.15);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff3b3b 0%, #e6a700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            letter-spacing: 3px;
+        }
+
+        .navbar-brand i {
+            -webkit-text-fill-color: #ff3b3b;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .navbar-subtitle {
+            font-size: 0.8rem;
+            color: #ff3b3b;
+            margin-left: 20px;
+            font-weight: 600;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        /* ============ SIDEBAR ============ */
+        .sidebar {
+            background: linear-gradient(180deg, rgba(15, 20, 40, 0.98), rgba(20, 25, 50, 0.98));
+            border-right: 2px solid rgba(255, 59, 59, 0.3);
+            min-height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 60px;
+            width: 280px;
+            overflow-y: auto;
+            padding: 2rem 0;
+            box-shadow: inset -2px 0 8px rgba(255, 59, 59, 0.1), 8px 0 32px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        body.light-mode .sidebar {
+            background: linear-gradient(180deg, #f8f8f8, #f5f5f5);
+            border-right: 2px solid #ddd;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-item {
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            border-left: 4px solid transparent;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #a0a0a0;
+            font-weight: 500;
+            position: relative;
+            margin: 0.3rem 0;
+            letter-spacing: 0.3px;
+        }
+
+        body.light-mode .sidebar-item {
+            color: #666;
+        }
+
+        .sidebar-item i {
+            width: 20px;
+            font-size: 1.1rem;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .sidebar-item:hover {
+            background: linear-gradient(90deg, rgba(255, 59, 59, 0.2), transparent);
+            border-left-color: #ff3b3b;
+            color: #ff3b3b;
+            padding-left: 2rem;
+            box-shadow: inset 4px 0 12px rgba(255, 59, 59, 0.15);
+        }
+
+        .sidebar-item:hover i {
+            transform: scale(1.2) rotate(12deg);
+            filter: drop-shadow(0 0 8px rgba(255, 59, 59, 0.5));
+        }
+
+        .sidebar-item.active {
+            background: linear-gradient(90deg, rgba(255, 59, 59, 0.3), rgba(255, 59, 59, 0.05));
+            border-left-color: #ff3b3b;
+            color: #ff3b3b;
+            font-weight: 700;
+            box-shadow: inset -4px 0 16px rgba(255, 59, 59, 0.2), inset 4px 0 12px rgba(255, 59, 59, 0.1);\n        }
+
+        /* ============ MAIN CONTENT ============ */
+        .main-content {
+            margin-left: 280px;
+            padding: 2rem;
+            min-height: calc(100vh - 60px);
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ============ CARDS ============ */
+        .card-modern {
+            background: linear-gradient(135deg, rgba(20, 25, 50, 0.95), rgba(30, 35, 60, 0.95));
+            border: 2px solid rgba(255, 59, 59, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 59, 59, 0.4), transparent);
+        }
+
+        .card-modern::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 59, 59, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        body.light-mode .card-modern {
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
+            border-color: #ddd;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-modern:hover {
+            box-shadow: 0 24px 72px rgba(255, 59, 59, 0.5), 0 0 50px rgba(0, 102, 204, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transform: translateY(-8px);
+            border-color: rgba(0, 102, 204, 0.5);
+        }
+
+        .card-modern:hover::after {
+            opacity: 1;
+        }
+
+        .card-title {
+            color: #ff3b3b;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            letter-spacing: 0.5px;
+        }
+
+        .card-title i {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-title:hover {
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
+        }
+
+        .card-title:hover i {
+            transform: scale(1.2) rotate(-10deg);
+            filter: drop-shadow(0 0 10px rgba(255, 59, 59, 0.6));
+        }
+
+        body.light-mode .card-title {
+            color: #ff3b3b;
+        }
+
+        /* ============ STAT CARDS ============ */
+        .stat-card {
+            background: linear-gradient(135deg, rgba(30, 35, 60, 0.95), rgba(40, 45, 70, 0.95));
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 5px solid #ff3b3b;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid rgba(255, 59, 59, 0.2);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 59, 59, 0.1) 0%, transparent 60%);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        body.light-mode .stat-card {
+            background: #ffffff;
+            border-color: #ff3b3b;
+            box-shadow: 0 4px 12px rgba(255, 59, 59, 0.1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-14px) scale(1.04);
+            box-shadow: 0 20px 60px rgba(255, 59, 59, 0.5), 0 0 40px rgba(255, 59, 59, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border-left-color: #ff6b6b;
+            border-color: rgba(255, 59, 59, 0.5);
+        }
+
+        .stat-card:hover::after {
+            opacity: 1;
+        }
+
+        .stat-icon {
+            font-size: 2.8rem;
+            color: #ff3b3b;
+            margin-bottom: 10px;
+            animation: pulse 2.5s ease-in-out infinite;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 0 5px rgba(255, 59, 59, 0.3));
+        }
+
+        .stat-card:hover .stat-icon {
+            font-size: 3.2rem;
+            animation: none;
+            filter: drop-shadow(0 0 15px rgba(255, 59, 59, 0.7));
+        }
+
+        .stat-value {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #ff3b3b;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            letter-spacing: 0.5px;
+        }
+
+        .stat-card:hover .stat-value {
+            text-shadow: 0 0 20px rgba(255, 59, 59, 0.7);
+            transform: scale(1.1);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+        }
+
+        /* ============ TABLE STYLES ============ */
+        .table-modern {
+            color: #e0e0e0;
+            border-color: rgba(255, 59, 59, 0.2);
+        }
+
+        body.light-mode .table-modern {
+            color: #1a1a1a;
+            border-color: #ddd;
+        }
+
+        .table-modern thead {
+            background: rgba(255, 59, 59, 0.15);
+            border-bottom: 2px solid rgba(255, 59, 59, 0.3);
+        }
+
+        body.light-mode .table-modern thead {
+            background: rgba(255, 59, 59, 0.1);
+        }
+
+        .table-modern thead th {
+            color: #ff3b3b;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .table-modern tbody tr {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 59, 59, 0.1);
+        }
+
+        .table-modern tbody tr:hover {
+            background: rgba(255, 59, 59, 0.1);
+        }
+
+        /* ============ BUTTONS ============ */
+        .btn-action {
+            background: linear-gradient(90deg, #ff3b3b, #ff5555);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .btn-action:hover {
+            box-shadow: 0 8px 24px rgba(255, 59, 59, 0.4);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(230, 167, 0, 0.8);
+        }
+
+        .btn-success {
+            background: rgba(23, 162, 184, 0.8);
+        }
+
+        /* ============ BADGES ============ */
+        .badge-critical {
+            background: linear-gradient(90deg, #ff3b3b, #ff5555);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .badge-high {
+            background: linear-gradient(90deg, #e6a700, #ffc107);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .badge-medium {
+            background: linear-gradient(90deg, #17a2b8, #20c997);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .badge-low {
+            background: linear-gradient(90deg, #6c757d, #8a959f);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        /* ============ THEME TOGGLE ============ */
+        #themeToggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #ff3b3b, #e6a700);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 59, 59, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #themeToggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(255, 59, 59, 0.6);
+        }
+
+        /* ============ CHARTS ============ */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 2rem;
+        }
+
+        .chart-title {
+            color: #ff3b3b;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ============ LOG STYLES ============ */
+        .log-entry {
+            background: rgba(20, 25, 50, 0.8);
+            border-left: 3px solid #ff3b3b;
+            padding: 1rem;
+            margin-bottom: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 59, 59, 0.2);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .log-entry {
+            background: #f9f9f9;
+            border-color: rgba(255, 59, 59, 0.3);
+        }
+
+        .log-entry:hover {
+            background: rgba(30, 35, 60, 0.9);
+            box-shadow: 0 4px 16px rgba(255, 59, 59, 0.1);
+        }
+
+        .log-timestamp {
+            color: #e6a700;
+            font-weight: 600;
+        }
+
+        .log-action {
+            color: #ff3b3b;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+
+        .log-details {
+            color: #17a2b8;
+        }
+
+        /* ============ THREAT LEVEL INDICATOR ============ */
+        .threat-meter {
+            background: linear-gradient(90deg, rgba(20, 25, 50, 0.9), rgba(30, 35, 60, 0.9));
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 59, 59, 0.3);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .threat-level-critical {
+            color: #ff3b3b;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 59, 59, 0.5);
+        }
+
+        .threat-level-high {
+            color: #e6a700;
+        }
+
+        .threat-level-medium {
+            color: #17a2b8;
+        }
+
+        .threat-level-low {
+            color: #6c757d;
+        }
+
+        /* ============ EXPLOIT CARD ============ */
+        .exploit-card {
+            background: rgba(20, 25, 50, 0.8);
+            border: 2px solid rgba(255, 59, 59, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .exploit-card:hover {
+            border-color: rgba(255, 59, 59, 0.6);
+            box-shadow: 0 8px 24px rgba(255, 59, 59, 0.2);
+        }
+
+        .exploit-difficulty {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .difficulty-easy {
+            background: rgba(52, 211, 153, 0.3);
+            color: #34d399;
+        }
+
+        .difficulty-medium {
+            background: rgba(230, 167, 0, 0.3);
+            color: #e6a700;
+        }
+
+        .difficulty-hard {
+            background: rgba(255, 59, 59, 0.3);
+            color: #ff3b3b;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main-content {
+                margin-left: 200px;
+                padding: 1rem;
+            }
+
+            .stat-card {
+                margin-bottom: 1rem;
+            }
+
+            #themeToggle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .sidebar {
+                width: 160px;
+                padding: 1rem 0;
+            }
+
+            .sidebar-item {
+                padding: 0.8rem 1rem;
+                fontSize: 0.9rem;
+            }
+
+            .main-content {
+                margin-left: 160px;
+                padding: 0.5rem;
+            }
+
+            .card-modern {
+                padding: 1.2rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-bug"></i>
+            SHODAN VulnScopeX
+        </div>
+        <span class="navbar-subtitle">🔓 Penetration Testing Intelligence Platform</span>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-item active" data-section="overview">
+            <i class="fas fa-chart-pie"></i>
+            <span>📊 Overview</span>
+        </div>
+        <div class="sidebar-item" data-section="vulnerabilities">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>🔍 Vulnerabilities</span>
+        </div>
+        <div class="sidebar-item" data-section="threat-intel">
+            <i class="fas fa-network-wired"></i>
+            <span>⚡ Threat Intel</span>
+        </div>
+        <div class="sidebar-item" data-section="exploit-analyzer">
+            <i class="fas fa-code"></i>
+            <span>💣 Exploit DB</span>
+        </div>
+        <div class="sidebar-item" data-section="logs">
+            <i class="fas fa-list"></i>
+            <span>📝 Activity Logs</span>
+        </div>
+        <div class="sidebar-item" data-section="query-builder">
+            <i class="fas fa-search"></i>
+            <span>🔎 Query Builder</span>
+        </div>
+        <div class="sidebar-item" data-section="analysis">
+            <i class="fas fa-chart-line"></i>
+            <span>📈 Analysis</span>
+        </div>
+        <div class="sidebar-item" data-section="settings">
+            <i class="fas fa-cog"></i>
+            <span>⚙️ Settings</span>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <!-- OVERVIEW SECTION -->
+        <section id="overview" class="section active">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-bug"></i></div>
+                        <div class="stat-value" id="totalVulns">0</div>
+                        <div class="stat-label">Total Vulnerabilities</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card" style="border-left-color: #ff3b3b;">
+                        <div class="stat-icon" style="color: #ff3b3b;"><i class="fas fa-skull-crossbones"></i></div>
+                        <div class="stat-value" style="color: #ff3b3b;" id="criticalCount">0</div>
+                        <div class="stat-label">CRITICAL</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card" style="border-left-color: #e6a700;">
+                        <div class="stat-icon" style="color: #e6a700;"><i class="fas fa-exclamation"></i></div>
+                        <div class="stat-value" style="color: #e6a700;" id="highCount">0</div>
+                        <div class="stat-label">HIGH</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card" style="border-left-color: #17a2b8;">
+                        <div class="stat-icon" style="color: #17a2b8;"><i class="fas fa-alert"></i></div>
+                        <div class="stat-value" style="color: #17a2b8;" id="mediumCount">0</div>
+                        <div class="stat-label">MEDIUM</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THREAT LEVEL -->
+            <div class="threat-meter" id="threatMeter" style="display: none;">
+                <h3 style="color: #ff3b3b; margin-bottom: 1rem;">⚠️ SYSTEM THREAT ASSESSMENT</h3>
+                <div class="threat-level-critical" id="threatLevel">CRITICAL</div>
+                <p style="color: #ff3b3b; margin-top: 1rem; font-weight: 600;" id="threatAction">IMMEDIATE ACTION REQUIRED</p>
+                <p style="color: #a0a0a0; font-size: 0.9rem;">Threat Score: <span id="threatScore">0</span> | Avg Score: <span id="avgScore">0</span></p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-modern">
+                        <h5 class="chart-title"><i class="fas fa-chart-doughnut"></i> Priority Distribution</h5>
+                        <div class="chart-container">
+                            <canvas id="priorityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-modern">
+                        <h5 class="chart-title"><i class="fas fa-chart-area"></i> Top Vulnerable Targets</h5>
+                        <table class="table table-modern">
+                            <thead>
+                                <tr>
+                                    <th>Target</th>
+                                    <th>Vulns</th>
+                                    <th>Max Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topTargetsBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VULNERABILITIES SECTION -->
+        <section id="vulnerabilities" class="section">
+            <div class="card-modern">
+                <h3 class="card-title"><i class="fas fa-exclamation-triangle"></i> Vulnerability Management (LIVE CRUD)</h3>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="searchInput" placeholder="🔍 Search by target, CVE, or URL...">
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" id="priorityFilter">
+                            <option value="">All Priorities</option>
+                            <option value="CRITICAL">🔴 CRITICAL</option>
+                            <option value="HIGH">🟠 HIGH</option>
+                            <option value="MEDIUM">🟡 MEDIUM</option>
+                            <option value="LOW">🟢 LOW</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-action w-100" id="refreshBtn"><i class="fas fa-sync"></i> Refresh</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-modern">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Priority</th>
+                                <th>Score</th>
+                                <th>Target</th>
+                                <th>CVE ID</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vulnsBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr style="border-color: rgba(255, 59, 59, 0.2);">
+                <h5 style="color: #e6a700; margin-bottom: 1rem;"><i class="fas fa-plus"></i> Quick Add Vulnerability</h5>
+                <div class="row">
+                    <div class="col-md-2">
+                        <select class="form-select" id="quickPriority">
+                            <option value="CRITICAL" selected>CRITICAL</option>
+                            <option value="HIGH">HIGH</option>
+                            <option value="MEDIUM">MEDIUM</option>
+                            <option value="LOW">LOW</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" id="quickScore" placeholder="Score" value="80" min="0" max="100">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="quickTarget" placeholder="Target (IP:Port)">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="quickCVE" placeholder="CVE ID">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-action w-100" id="quickAddBtn"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THREAT INTELLIGENCE SECTION -->
+        <section id="threat-intel" class="section">
+            <div class="card-modern">
+                <h3 class="card-title"><i class="fas fa-network-wired"></i> Advanced Threat Intelligence</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-modern">
+                        <h5 class="chart-title"><i class="fas fa-server"></i> Exploit Database</h5>
+                        <div style="max-height: 600px; overflow-y: auto;">
+                            <div id="exploitListContainer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-modern">
+                        <h5 class="chart-title"><i class="fas fa-key"></i> Default Credentials</h5>
+                        <table class="table table-modern" style="font-size: 0.9rem;">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>User</th>
+                                    <th>Pass</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="credsTable">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-modern">
+                <h5 class="chart-title"><i class="fas fa-chart-bar"></i> Attack Vector Analysis</h5>
+                <div id="vectorAnalysisContainer"></div>
+            </div>
+        </section>
+
+        <!-- EXPLOIT ANALYZER SECTION -->
+        <section id="exploit-analyzer" class="section">
+            <div class="card-modern">
+                <h3 class="card-title"><i class="fas fa-code"></i> Exploit Analyzer & Payload Generator</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-modern">
+                        <h5 class="chart-title"><i class="fas fa-calculator"></i> CVSS Score Analysis</h5>
+                        <div class="row mb-3">
+                            <div class="col-md-9">
+                                <input type="range" class="form-range" id="cvssSlider" min="0" max="10" step="0.1" value="7">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" id="cvssInput" value="7" min="0" max="10" step="0.1">
+                            </div>
+                        </div>
+                        <div id="cvssAnalysisResult"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card-modern">
+                        <h5 class="chart-title"><i class="fas fa-code-branch"></i> Payload Suggestion</h5>
+                        <select class="form-select mb-3" id="payloadType">
+                            <option value="general" selected>General Payloads</option>
+                            <option value="sql_injection">SQL Injection</option>
+                            <option value="xss">XSS (Cross-Site Scripting)</option>
+                            <option value="rce">RCE (Remote Code Execution)</option>
+                            <option value="ldap_injection">LDAP Injection</option>
+                            <option value="command_injection">Command Injection</option>
+                            <option value="nosql_injection">NoSQL Injection</option>
+                        </select>
+                        <button class="btn btn-action w-100 mb-3" id="generatePayloadsBtn"><i class="fas fa-rocket"></i> Generate Payloads</button>
+                        <div id="payloadsContainer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-modern">
+                <h5 class="chart-title"><i class="fas fa-brain"></i> Vulnerability Correlation Analysis</h5>
+                <div id="correlationAnalysisContainer"></div>
+            </div>
+        </section>
+
+        <!-- ACTIVITY LOGS SECTION -->
+        <section id="logs" class="section">
+            <div class="card-modern">
+                <h3 class="card-title"><i class="fas fa-list"></i> Real-time Activity Logs & Audit Trail</h3>
+                
+                <div class="row mb-3">
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="logFilter" placeholder="🔍 Filter logs by action...">
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-action w-100" id="clearLogsBtn"><i class="fas fa-trash"></i> Clear Logs</button>
+                    </div>
+                </div>
+
+                <div style="max-height: 700px; overflow-y: auto; border-radius: 12px; padding: 1rem; background: rgba(10, 15, 35, 0.8); border: 1px solid rgba(255, 59, 59, 0.2);">
+                    <div id="logsContainer"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUERY BUILDER SECTION -->
+        <section id="query-builder" class="section">
+            <div class="card-modern">
+                <h3 class="card-title"><i class="fas fa-search"></i> SHODAN Query Builder</h3>
+                
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="queryInput" placeholder="Enter SHODAN query (e.g., mongodb, elasticsearch, ssh)...">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" id="queryLimit" value="50" min="1" max="1000">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-action w-100" id="runQueryBtn"><i class="fas fa-play"></i> Run Query</button>
+                    </div>
+                </div>
+
+                <h5 style="color: #e6a700; margin-bottom: 1rem;"><i class="fas fa-bolt"></i> Quick Query Templates</h5>
+                <div id="predefinedQueriesContainer"></div>
+            </div>
+        </section>
+
+        <!-- ANALYSIS SECTION -->
+        <section id="analysis" class="section">
+            <div class="card-modern">
+                <h3 class="card-title"><i class="fas fa-chart-line"></i> Advanced Analysis & Metrics</h3>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-calculator"></i></div>
+                            <div class="stat-value" id="avgScoreValue">0</div>
+                            <div class="stat-label">Avg Score</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="stat-value" id="uniqueTargetsValue">0</div>
+                            <div class="stat-label">Unique Targets</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="stat-value" id="uniqueCVEsValue">0</div>
+                            <div class="stat-label">Unique CVEs</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                            <div class="stat-value" id="lastUpdateValue">N/A</div>
+                            <div class="stat-label">Last Update</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="anomaliesContainer"></div>
+            </div>
+        </section>
+
+        <!-- SETTINGS SECTION -->
+        <section id="settings" class="section">
+            <div class="card-modern">
+                <h3 class="card-title"><i class="fas fa-cog"></i> Settings & Configuration</h3>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label style="color: #ff3b3b; font-weight: 600;">SHODAN API Key</label>
+                        <input type="password" class="form-control" id="apiKeyInput" placeholder="Enter API key...">
+                        <small style="color: #a0a0a0;">Your API key is stored locally only</small>
+                    </div>
+                    <div class="col-md-6">
+                        <label style="color: #ff3b3b; font-weight: 600;">Default Query Limit</label>
+                        <input type="number" class="form-control" id="defaultLimit" value="50" min="1" max="1000">
+                    </div>
+                </div>
+
+                <button class="btn btn-action mb-3" id="saveSettingsBtn"><i class="fas fa-save"></i> Save Settings</button>
+
+                <hr style="border-color: rgba(255, 59, 59, 0.2);">
+
+                <h5 style="color: #e6a700; margin-bottom: 1rem;"><i class="fas fa-trash"></i> Database Management</h5>
+                <button class="btn btn-action mb-3" id="exportCsvBtn" style="background: linear-gradient(90deg, #17a2b8, #20c997);"><i class="fas fa-download"></i> Export CSV</button>
+                <button class="btn btn-action mb-3" id="exportJsonBtn" style="background: linear-gradient(90deg, #17a2b8, #20c997); margin-left: 5px;"><i class="fas fa-download"></i> Export JSON</button>
+
+                <hr style="border-color: rgba(255, 59, 59, 0.2);">
+
+                <h5 style="color: #ff3b3b; margin-bottom: 1rem;"><i class="fas fa-warning"></i> Danger Zone</h5>
+                <button class="btn btn-action" id="clearDbBtn" style="background: linear-gradient(90deg, #cc3333, #ff5555);"><i class="fas fa-exclamation-triangle"></i> Clear All Data</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- THEME TOGGLE BUTTON -->
+    <button id="themeToggle" title="Toggle Dark/Light Mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const API_BASE = '/api/v2';
+        let currentTheme = localStorage.getItem('theme') || 'dark';
+        let currentPage = 'overview';
+        let priorityChart = null;
+
+        // ============ INITIALIZATION ============
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            loadDashboard();
+            setupEventListeners();
+            setInterval(loadDashboard, 30000); // Auto-refresh every 30s
+            loadActivityLogs();
+            setInterval(loadActivityLogs, 10000); // Refresh logs every 10s
+        });
+
+        // ============ THEME TOGGLE ============
+        function initTheme() {
+            if (currentTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.getElementById('themeIcon').className = 'fas fa-sun';
+            } else {
+                document.body.classList.remove('light-mode');
+                document.getElementById('themeIcon').className = 'fas fa-moon';
+            }
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+            initTheme();
+        });
+
+        // ============ NAVIGATION ============
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                
+                currentPage = item.dataset.section;
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                document.getElementById(currentPage).classList.add('active');
+                
+                if (currentPage === 'threat-intel') loadThreatIntel();
+                else if (currentPage === 'exploit-analyzer') loadExploitAnalyzer();
+            });
+        });
+
+        // ============ DASHBOARD LOADING ============
+        async function loadDashboard() {
+            try {
+                const res = await fetch(`${API_BASE}/stats`);
+                const data = await res.json();
+                
+                if (data.success) {
+                    updateStats(data.data);
+                    updateCharts(data.data);
+                    if (currentPage === 'overview') {
+                        loadTopTargets();
+                        calculateThreatLevel();
+                    }
+                }
+            } catch (e) {
+                console.error('Dashboard error:', e);
+            }
+        }
+
+        function updateStats(stats) {
+            document.getElementById('totalVulns').textContent = stats.total || 0;
+            document.getElementById('criticalCount').textContent = stats.critical || 0;
+            document.getElementById('highCount').textContent = stats.high || 0;
+            document.getElementById('mediumCount').textContent = stats.medium || 0;
+            document.getElementById('avgScoreValue').textContent = (stats.avg_score || 0).toFixed(1);
+            document.getElementById('uniqueTargetsValue').textContent = stats.unique_targets || 0;
+            document.getElementById('uniqueCVEsValue').textContent = stats.unique_cves || 0;
+        }
+
+        function updateCharts(stats) {
+            const ctx = document.getElementById('priorityChart');
+            if (priorityChart) priorityChart.destroy();
+            
+            priorityChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['🔴 CRITICAL', '🟠 HIGH', '🟡 MEDIUM', '🟢 LOW'],
+                    datasets: [{
+                        data: [stats.critical, stats.high, stats.medium, stats.low],
+                        backgroundColor: ['#ff3b3b', '#e6a700', '#17a2b8', '#6c757d'],
+                        borderColor: ['rgba(255, 59, 59, 0.5)', 'rgba(230, 167, 0, 0.5)', 'rgba(23, 162, 184, 0.5)', 'rgba(108, 117, 125, 0.5)'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#e0e0e0', font: { size: 12 } } }
+                    }
+                }
+            });
+
+            document.body.classList.contains('light-mode') && updateChartColors();
+        }
+
+        // ============ VULNERABILITIES CRUD ============
+        async function loadVulnerabilities() {
+            const limit = 100;
+            const priority = document.getElementById('priorityFilter').value;
+            const search = document.getElementById('searchInput').value;
+            
+            const url = `${API_BASE}/vulns?limit=${limit}${priority ? '&priority=' + priority : ''}${search ? '&search=' + search : ''}`;
+            
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                
+                if (data.success) {
+                    const html = data.data.map(v => `
+                        <tr>
+                            <td><strong>#${v.id}</strong></td>
+                            <td><span class="badge-${v.priority.toLowerCase()}">${v.priority}</span></td>
+                            <td><strong>${v.score}</strong></td>
+                            <td><code>${v.target}</code></td>
+                            <td><small>${v.cve_id}</small></td>
+                            <td><span style="color: #17a2b8;">${v.status || 'active'}</span></td>
+                            <td>
+                                <button class="btn btn-action" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="editVuln(${v.id})"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-action" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; background: #ff5555;" onclick="deleteVulnLive(${v.id})"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    `).join('');
+                    document.getElementById('vulnsBody').innerHTML = html;
+                }
+            } catch (e) {
+                console.error('Load vulns error:', e);
+            }
+        }
+
+        async function deleteVulnLive(id) {
+            if (!confirm('Delete vulnerability #' + id + '?')) return;
+            
+            try {
+                const res = await fetch(`${API_BASE}/vulns/${id}`, { method: 'DELETE' });
+                const data = await res.json();
+                if (data.success) {
+                    loadVulnerabilities();
+                    loadDashboard();
+                }
+            } catch (e) {
+                alert('Delete error: ' + e.message);
+            }
+        }
+
+        async function quickAddVulnerability() {
+            const priority = document.getElementById('quickPriority').value;
+            const score = parseInt(document.getElementById('quickScore').value);
+            const target = document.getElementById('quickTarget').value;
+            const cveId = document.getElementById('quickCVE').value;
+            
+            if (!target) { alert('Target required'); return; }
+            
+            try {
+                const res = await fetch(`${API_BASE}/vulns`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ priority, score, target, cve_id: cveId || 'N/A', url: '' })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    document.getElementById('quickTarget').value = '';
+                    document.getElementById('quickCVE').value = '';
+                    loadVulnerabilities();
+                    loadDashboard();
+                }
+            } catch (e) {
+                alert('Add error: ' + e.message);
+            }
+        }
+
+        // ============ TOP TARGETS ============
+        async function loadTopTargets() {
+            try {
+                const res = await fetch(`${API_BASE}/stats/top-targets`);
+                const data = await res.json();
+                if (data.success) {
+                    const html = data.data.map((t, i) => `
+                        <tr>
+                            <td><strong>#${i+1}</strong></td>
+                            <td><code>${t.target}</code></td>
+                            <td><strong>${t.vulns}</strong></td>
+                            <td><span class="badge-high">${t.max_score}</span></td>
+                        </tr>
+                    `).join('');
+                    document.getElementById('topTargetsBody').innerHTML = html;
+                }
+            } catch (e) {
+                console.error('Top targets error:', e);
+            }
+        }
+
+        // ============ THREAT INTELLIGENCE ============
+        async function loadThreatIntel() {
+            try {
+                // Load Exploit DB
+                const exploitRes = await fetch(`${API_BASE}/threat/exploit-db`);
+                const exploitData = await exploitRes.json();
+                
+                if (exploitData.success) {
+                    const exploitHtml = Object.entries(exploitData.data).map(([service, info]) => `
+                        <div class="exploit-card">
+                            <h6 style="color: #ff3b3b;"><i class="fas fa-bullseye"></i> ${service}</h6>
+                            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+                                <strong>Type:</strong> ${info.type} | 
+                                <strong>Exploitable:</strong> ${info.exploitable ? '✓' : '✗'}
+                            </p>
+                            <p style="color: #17a2b8; font-family: 'Fira Code'; font-size: 0.85rem; margin-bottom: 0.5rem;">
+                                <code>${info.poc}</code>
+                            </p>
+                            <span class="exploit-difficulty difficulty-${info.difficulty.toLowerCase()}">${info.difficulty} (Impact: ${info.impact})</span>
+                        </div>
+                    `).join('');
+                    document.getElementById('exploitListContainer').innerHTML = exploitHtml;
+                }
+
+                // Load Default Creds
+                const credsRes = await fetch(`${API_BASE}/threat/default-creds`);
+                const credsData = await credsRes.json();
+                if (credsData.success) {
+                    const credsHtml = credsData.data.map(c => `
+                        <tr>
+                            <td><strong>${c.service}</strong></td>
+                            <td>${c.user}</td>
+                            <td><code>${c.pass}</code></td>
+                            <td><small>${c.notes}</small></td>
+                        </tr>
+                    `).join('');
+                    document.getElementById('credsTable').innerHTML = credsHtml;
+                }
+            } catch (e) {
+                console.error('Threat intel error:', e);
+            }
+        }
+
+        // ============ EXPLOIT ANALYZER ============
+        async function loadExploitAnalyzer() {
+            // CVSS Analysis
+            document.getElementById('cvssSlider').value = 7;
+            document.getElementById('cvssInput').value = 7;
+            analyzeCVSS(7);
+        }
+
+        async function analyzeCVSS(score) {
+            try {
+                const res = await fetch(`${API_BASE}/analyze/cvss`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ score })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    const severity = data.data.severity;
+                    const colors = { CRITICAL: '#ff3b3b', HIGH: '#e6a700', MEDIUM: '#17a2b8', LOW: '#6c757d' };
+                    document.getElementById('cvssAnalysisResult').innerHTML = `
+                        <div style="background: rgba(${severity === 'CRITICAL' ? '255,59,59' : severity === 'HIGH' ? '230,167,0' : severity === 'MEDIUM' ? '23,162,184' : '108,117,125'}, 0.2); padding: 1rem; border-radius: 8px; border-left: 4px solid ${colors[severity]};">
+                            <h6 style="color: ${colors[severity]}; margin-bottom: 0.5rem;"><i class="fas fa-exclamation"></i> Severity: ${severity}</h6>
+                            <p style="font-size: 0.85rem; margin: 0;">
+                                <strong>Confidentiality:</strong> ${data.data.impact.confidentiality} | 
+                                <strong>Integrity:</strong> ${data.data.impact.integrity} | 
+                                <strong>Availability:</strong> ${data.data.impact.availability}
+                            </p>
+                        </div>
+                    `;
+                }
+            } catch (e) {
+                console.error('CVSS error:', e);
+            }
+        }
+
+        document.getElementById('cvssSlider').addEventListener('input', (e) => {
+            document.getElementById('cvssInput').value = e.target.value;
+            analyzeCVSS(e.target.value);
+        });
+
+        document.getElementById('cvssInput').addEventListener('change', (e) => {
+            document.getElementById('cvssSlider').value = e.target.value;
+            analyzeCVSS(e.target.value);
+        });
+
+        // ============ ACTIVITY LOGS ============
+        async function loadActivityLogs() {
+            try {
+                const res = await fetch(`${API_BASE}/logs`);
+                const data = await res.json();
+                if (data.success) {
+                    const html = data.data.slice(0, 50).map(log => `
+                        <div class="log-entry">
+                            <span class="log-timestamp">${new Date(log.timestamp).toLocaleTimeString()}</span>
+                            <span class="log-action">[${log.action}]</span>
+                            <span class="log-details">${log.details}</span>
+                            <br>
+                            <small style="color: #6c757d;">IP: ${log.ip} | ${log.method} ${log.endpoint}</small>
+                        </div>
+                    `).join('');
+                    document.getElementById('logsContainer').innerHTML = html;
+                }
+            } catch (e) {
+                console.error('Logs error:', e);
+            }
+        }
+
+        // ============ THREAT LEVEL ============
+        async function calculateThreatLevel() {
+            try {
+                const res = await fetch(`${API_BASE}/analyze/threat-level`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    const meter = document.getElementById('threatMeter');
+                    meter.style.display = 'block';
+                    const level = data.data.threat_level;
+                    const levelEl = document.getElementById('threatLevel');
+                    levelEl.className = `threat-level-${level.toLowerCase()}`;
+                    levelEl.textContent = level;
+                    document.getElementById('threatAction').textContent = data.data.recommended_action;
+                    document.getElementById('threatScore').textContent = data.data.threat_score;
+                    document.getElementById('avgScore').textContent = data.data.avg_vuln_score.toFixed(1);
+                }
+            } catch (e) {
+                console.error('Threat level error:', e);
+            }
+        }
+
+        // ============ PAYLOAD GENERATOR ============
+        async function generatePayloads() {
+            const type = document.getElementById('payloadType').value;
+            try {
+                const res = await fetch(`${API_BASE}/threat/payload-suggestions`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ type })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    const html = data.data.payloads.map(p => `
+                        <div style="background: rgba(23, 162, 184, 0.1); padding: 0.8rem; border-radius: 6px; margin-bottom: 0.5rem; border-left: 3px solid #17a2b8; font-family: 'Fira Code'; font-size: 0.85rem;">
+                            <code>${p}</code>
+                            <button class="btn" style="float: right; padding: 0; color: #17a2b8; border: none; font-size: 0.7rem;" onclick="this.parentElement.textContent = 'Copied!'; setTimeout(() => this.parentElement.innerHTML = '<code>${p}</code><button class=\"btn\" style=\"float: right; padding: 0; color: #17a2b8; border: none; font-size: 0.7rem;\" onclick=\"navigator.clipboard.writeText(\\'${p}\\'); this.textContent = \\'Copied!\\';\"><i class=\"fas fa-copy\"></i> Copy</button>', 1000)"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                    `).join('');
+                    document.getElementById('payloadsContainer').innerHTML = html;
+                }
+            } catch (e) {
+                console.error('Payload error:', e);
+            }
+        }
+
+        // ============ EVENT LISTENERS ============
+        function setupEventListeners() {
+            document.getElementById('searchInput').addEventListener('keyup', loadVulnerabilities);
+            document.getElementById('priorityFilter').addEventListener('change', loadVulnerabilities);
+            document.getElementById('refreshBtn').addEventListener('click', loadVulnerabilities);
+            document.getElementById('quickAddBtn').addEventListener('click', quickAddVulnerability);
+            document.getElementById('generatePayloadsBtn').addEventListener('click', generatePayloads);
+            document.getElementById('logFilter').addEventListener('keyup', () => {
+                // Filter logs by search term
+            });
+            document.getElementById('runQueryBtn').addEventListener('click', async () => {
+                const query = document.getElementById('queryInput').value;
+                if (!query) { alert('Enter a query'); return; }
+                try {
+                    const res = await fetch(`${API_BASE}/queries/run`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ query, limit: parseInt(document.getElementById('queryLimit').value) })
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                        alert('Scan started in background! Check logs for updates.');
+                        setTimeout(loadDashboard, 2000);
+                    }
+                } catch (e) {
+                    alert('Query error: ' + e.message);
+                }
+            });
+            document.getElementById('exportCsvBtn').addEventListener('click', () => {
+                window.location = `${API_BASE}/export/csv`;
+            });
+            document.getElementById('exportJsonBtn').addEventListener('click', () => {
+                fetch(`${API_BASE}/export/json`).then(r => r.json()).then(d => {
+                    const blob = new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'vulnerabilities.json';
+                    a.click();
+                });
+            });
+            document.getElementById('clearDbBtn').addEventListener('click', () => {
+                if (confirm('⚠️ This will DELETE ALL data! Are you sure?')) {
+                    fetch(`${API_BASE}/db/clear?confirm=true`, { method: 'DELETE' }).then(() => {
+                        loadDashboard();
+                        alert('Database cleared');
+                    });
+                }
+            });
+            document.getElementById('clearLogsBtn').addEventListener('click', () => {
+                if (confirm('Clear all activity logs?')) {
+                    fetch(`${API_BASE}/logs/clear`, { method: 'DELETE' }).then(() => {
+                        loadActivityLogs();
+                    });
+                }
+            });
+        }
+
+        function updateChartColors() {
+            if (priorityChart) {
+                priorityChart.options.plugins.legend.labels.color = document.body.classList.contains('light-mode') ? '#1a1a1a' : '#e0e0e0';
+                priorityChart.update();
+            }
+        }
+
+        // ============ INTERACTIVE MOUSE TRACKING ============
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.card, .card-modern, .stat-card, .modal-content');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // ============ SCROLL ANIMATIONS ============
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scale-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-modern, .stat-card, .card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ============ SMOOTH PAGE TRANSITIONS ============
+        const navigate = (section) => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(section);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        };
+
+        // Initial load
+        loadVulnerabilities();
+    </script>
+    
+    <!-- Custom JavaScript (Organization: TeamCyberOps) -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,2146 @@
+# SHODAN VulnScopeX v6.0 - 2000 Advanced Search Queries + v6.0 Discovery
+# Format: Simple query strings - direct use with SHODAN API (85+ endpoints)
+# Categories: Databases, Web Servers, APIs, Cloud, Security, Services, Vulnerabilities
+
+# ===== DATABASES (Queries 1-150) =====
+port:3000 http.status:200
+port:3000 product:"Node.js"
+port:3000 title:"Dashboard"
+mongodb
+mongodb port:27017
+mongodb open
+mongodb "mongod version"
+mongodb authenticated:false
+mongodb country:US
+mongodb port:27017 country:US
+mongodb port:27017 country:CN
+mongodb port:27017 country:RU
+mongodb port:27017 country:IN
+mongodb port:27017 country:BR
+mongodb 27017
+mongo_version
+mongodb server version
+redis
+redis port:6379
+redis open
+redis "redis_version"
+redis authenticated:false
+redis country:US
+redis port:6379 country:US
+redis port:6379 country:CN
+redis 6379 open
+redis:version
+redis-cli
+mysql port:3306
+mysql open
+mysql "mysql_version"
+mysql authenticated:false
+mysql 3306
+mysql country:US
+mysql country:CN
+mysql country:RU
+mysql country:IN
+mysql country:BR
+postgres port:5432
+postgresql
+postgresql port:5432
+postgresql open
+postgresql "PostgreSQL"
+postgres authenticated:false
+postgresql 5432
+postgresql country:US
+postgresql country:CN
+elasticsearch
+elasticsearch port:9200
+elasticsearch open
+elasticsearch "elasticsearch version"
+elasticsearch version:
+elasticsearch http.status:200
+elasticsear country:US
+elasticsearch country:CN
+couchdb
+couchdb port:5984
+couchdb open
+couchdb database
+couchdb authenticated:false
+cassandra port:9042
+cassandra open
+dynamodb
+rethinkdb port:28015
+rethinkdb open
+memcached port:11211
+memcached open
+oracle port:1521
+oracle authenticated:false
+mssql port:1433
+mssql open
+mariadb port:3306
+mariadb open
+firebird port:3050
+firebird open
+influxdb port:8086
+influxdb open
+clickhouse port:9000
+cockroachdb port:26257
+cockroachdb open
+scylla port:9042
+scylla open
+arangodb port:8529
+arangodb open
+neo4j port:7474
+neo4j open
+citus port:5432
+mysql version
+mongodb version
+postgres version
+redis version
+database open port
+db port open
+database http.status:200
+database "version"
+databases country:US
+databases country:CN
+port:3306 country:RU
+port:5432 country:RU
+port:9200 country:RU
+mysql port:3306 http.status:200
+postgres port:5432 http.status:200
+elasticsearch port:9200 http.status:200
+database authenticated:false
+port:27017 http.status:200
+port:6379 http.status:200
+port:1433 http.status:200
+port:5984 http.status:200
+port:9042 http.status:200
+database unknown country:US
+database organization:amazon
+database organization:google
+database organization:microsoft
+database open source
+database default credentials
+database weak password
+unencrypted database
+database ssl:false
+database tls:false
+database http.status:401
+database http.status:403
+database http.status:500
+database ssl.cert.expired:true
+database ssl:false country:US
+database open country:US
+database open country:CN
+database open country:RU
+database open country:IN
+database open country:BR
+database open country:KR
+database open country:JP
+database open country:DE
+database open country:GB
+db server open
+database_version
+db_version
+version_database
+sql server port
+http.title:"Database"
+http.title:"Admin"
+http.title:"Management"
+cgi-bin database
+admin database
+management port:27017
+dashboard port:3000
+phpmyadmin
+adminer
+sequel pro
+database browser
+database viewer
+database admin
+database console
+database shell
+sqlmap
+sql injection
+
+# ===== WEB SERVERS (Queries 151-300) =====
+apache
+apache port:80
+apache http.status:200
+apache "Apache"
+apache country:US
+apache country:CN
+apache country:RU
+nginx
+nginx port:80
+nginx http.status:200
+nginx "nginx"
+nginx country:US
+nginx country:CN
+iis
+iis port:80
+iis "IIS"
+iis country:US
+tomcat
+tomcat port:8080
+tomcat http.status:200
+jetty
+jetty port:8080
+jboss
+jboss port:8080
+weblogic
+weblogic port:7001
+weblogic port:8080
+node.js
+nodejs port:3000
+nodejs http.status:200
+express
+rails
+django port:8000
+flask port:5000
+gunicorn
+uwsgi
+litespeed
+lighttpd
+caddy
+cheroot
+waitress
+wsgiref
+http.title:"Apache"
+http.title:"Nginx"
+http.title:"IIS"
+http.title:"Tomcat"
+http.title:"JBoss"
+http.title:"WebLogic"
+web server open
+web server default
+web server version
+web port:80 country:US
+web port:80 country:CN
+web port:443 country:US
+web port:8080 country:US
+web port:8443 country:US
+web port:3000 country:US
+port:80 "Apache"
+port:80 "Nginx"
+port:8080 http.status:200
+port:8443 http.status:200
+port:3000 http.status:200
+port:4200 http.status:200
+port:5000 http.status:200
+port:8000 http.status:200
+port:9000 http.status:200
+port:9001 http.status:200
+http.robots "Disallow"
+http.robots "disallow"
+http.robots.paths:"admin"
+http.robots.paths:"api"
+http.robots.paths:"upload"
+http.robots.paths:"test"
+http.robots.paths:"backup"
+http.robots.paths:"config"
+http.robots.paths:"src"
+http.robots.paths:"admin"
+http.robots.paths:"manager"
+http.robots.paths:"console"
+http.robots.paths:"install"
+cgi-bin
+cgi-bin authenticated:false
+cgi-bin open
+web server country:US
+web server country:CN
+web server country:RU
+web server country:IN
+web server country:BR
+web server country:GB
+web server country:DE
+web server country:JP
+port:80 country:RU
+port:443 country:RU
+port:8080 country:RU
+web application open
+web portal open
+web interface open
+web dashboard open
+admin interface
+admin panel
+admin login
+admin console
+admin dashboard
+management interface
+management panel
+management console
+management dashboard
+
+# ===== SECURITY DEVICES (Queries 301-400) =====
+cisco router
+cisco firewall
+cisco asa
+checkpoint
+checkpoint firewall
+checkpoint gateway
+firewall
+palo alto
+palo alto networks
+paloaltonetworks
+fortinet
+fortigate
+forticare
+fortigard
+sophos
+sophos firewall
+pfsense
+pfblockerng
+juniper
+juniper srx
+juniper ex-series
+juniper mxseries
+f5
+f5 ltm
+f5 bigip
+barracuda
+barracuda web application firewall
+fortiweb
+web application firewall
+next generation firewall
+ngfw
+intrusion detection
+ids ips
+intrusion prevention
+snort
+suricata
+zeek
+bro ids
+network security
+network protection
+network monitoring
+router
+gateway
+vpn gateway
+vpn server
+vpn access
+vpn admin
+vpn ssl
+ipsec vpn
+vpn port:500
+vpn port:1194
+vpn port:1723
+vpn port:8443
+vpn country:US
+vpn country:RU
+vpn country:CN
+firewall port:443
+firewall port:8443
+firewall http.status:200
+firewall admin
+firewall console
+firewall management
+security appliance
+security device
+security gateway
+access control
+access management
+access policy
+policy enforcement
+threat protection
+threat detection
+network shield
+intrusion alert
+ddos protection
+ddos mitigation
+waf web application firewall
+waf enabled
+waf detection
+ddos attack
+ddos defense
+threat intelligence
+security monitoring
+security monitoring port:514
+security log
+security logging
+security alert
+security event
+security incident
+security response
+security manager
+security hub
+security ops
+security center
+security dashboard
+security console
+security gateway
+security infrastructure
+security layer
+security policy
+security protocol
+security service
+security solution
+security system
+security technology
+security tool
+security utility
+security framework
+security architecture
+security implementation
+security deployment
+
+# ===== REMOTE ACCESS (Queries 401-500) =====
+ssh
+ssh port:22
+ssh open
+ssh version
+ssh "OpenSSH"
+ssh country:US
+ssh country:CN
+ssh country:RU
+ssh country:IN
+ssh banner
+ssh_version
+rdp
+rdp port:3389
+rdp open
+rdp "Remote Desktop"
+rdp country:US
+rdp country:CN
+openvpn
+openvpn port:1194
+openvpn open
+openvpn "OpenVPN"
+telnet
+telnet port:23
+telnet open
+telnet authenticated:false
+vnc
+vnc port:5900
+vnc open
+vnc "VNC"
+vnc country:US
+citrix
+citrix port:1494
+citrix xenserver
+citrix gateway
+teamviewer
+putty
+putty.exe
+rdesktop
+mremoteng
+remote access
+remote connection
+remote desktop
+remote server
+remote shell
+remote terminal
+remote control
+remote login
+remote administration
+remote management
+bash shell
+ssh key
+ssh private key
+ssh public key
+ssh auth
+ssh open port
+shell access
+shell port
+shell terminal
+shell console
+remote console
+remote shell access
+remote code execution
+rce port
+telnet access
+insecure telnet
+telnet authenticated:false
+vnc authentication disabled
+vnc no authentication
+vnc port 5900 no auth
+rdp authentication disabled
+rdp port 3389 no auth
+ssh brute force
+ssh default password
+ssh weak key
+ssh weak password
+ssh keyless access
+ssh no authentication
+remote access enabled
+remote access port
+remote management port
+administration port:8080
+administration port:8443
+administration port:9000
+administration port:9090
+admin port:22
+admin port:3389
+admin port:5900
+admin rdp
+admin ssh
+admin console
+admin terminal
+admin shell
+admin remote
+admin access
+admin login
+admin password
+admin credentials
+
+# ===== BUSINESS APPLICATIONS (Queries 501-650) =====
+jenkins
+jenkins port:8080
+jenkins open
+jenkins admin
+jenkins "Jenkins"
+jenkins http.status:200
+jira
+jira port:8080
+jira open
+jira "JIRA"
+confluence
+confluence port:8090
+confluence open
+confluence "Confluence"
+gitlab
+gitlab port:80
+gitlab port:443
+gitlab "GitLab"
+github
+github port:443
+github enterprise
+gitlab
+bitbucket
+bitbucket port:7990
+sonarqube
+sonarqube port:9000
+kibana
+kibana port:5601
+kibana open
+kibana "Kibana"
+kibana dashboard
+grafana
+grafana port:3000
+grafana open
+grafana "Grafana"
+prometheus
+prometheus port:9090
+prometheus open
+awx
+awx port:8052
+tower
+tower port:443
+ansible tower
+splunk
+splunk port:8000
+splunk "Splunk"
+logstash
+logstash port:9600
+elastic stack
+elk stack
+elkie
+elk
+graylog
+graylog port:9000
+sumo logic
+datadog
+newrelic
+sentry
+sentry port:9000
+bugsnag
+rollbar
+amplitude
+mixpanel
+google analytics
+piwik
+matomo
+redash
+metabase
+metabase port:3000
+superset
+apache superset
+tableau
+qlikview
+power bi
+looker
+thoughtspot
+alteryx
+sisense
+perforce
+svn subversion
+subversion
+git server
+git port:22
+git port:80
+git port:443
+mercurial
+bazaar
+cvs
+artifactory
+artifactory port:8081
+nexus
+nexus port:8081
+archiva
+maven
+npm registry
+pip registry
+ruby gems
+nuget server
+composer
+gradle
+maven repository
+build server
+ci cd
+ci/cd
+continuous integration
+continuous delivery
+continuous deployment
+devops platform
+devops tools
+application performance
+performance management
+application monitoring
+application performance monitoring
+apm
+application health
+application insights
+application metrics
+application analytics
+business intelligence
+business analytics
+business intelligence portal
+bi platform
+analytics platform
+analytics dashboard
+analytics engine
+analytics service
+reporting tool
+reporting platform
+report generator
+report builder
+report server
+
+# ===== CLOUD & CONTAINERS (Queries 651-800) =====
+docker
+docker port:2375
+docker open
+docker api
+docker "Docker"
+docker registry
+docker hub
+docker swarm
+kubernetes
+kubernetes port:6443
+kubernetes api
+kubernetes dashboard
+kubernetes "Kubernetes"
+k8s
+k3s
+openshift
+rancher
+rancher port:443
+cattle
+nomad
+consul
+mesos
+marathon
+swarm
+compose
+docker-compose
+containerization
+container orchestration
+kubernetes master
+kubernetes node
+kubernetes worker
+kubernetes control
+aws
+aws s3
+aws ec2
+aws rds
+aws lambda
+aws dynamodb
+aws sqs
+aws sns
+aws iam
+aws ssl
+aws cloudfront
+aws elb
+amazon
+amazon ec2
+amazon s3
+amazonaws
+google cloud
+gcp
+google compute
+google cloud platform
+google cloud storage
+google cloud sql
+google cloud functions
+google app engine
+azure
+microsoft azure
+azure vm
+azure app service
+azure sql
+azure storage
+azure function
+azure app
+ibm cloud
+ibm bluemix
+heroku
+heroku app
+netlify
+vercel
+digital ocean
+do droplet
+linode
+vultr
+lightsail
+aws instance
+aws server
+aws service
+aws endpoint
+aws api
+aws lambda function
+aws dynamodb table
+aws s3 bucket
+aws ec2 instance
+aws rds database
+aws iam role
+aws secret
+aws key
+aws certificate
+aws ssl certificate
+aws certificate expired
+gcp bucket
+gcp instance
+gcp service
+gcp api
+gcp function
+gcp project
+gcp service account
+gcp api key
+gcp secret
+azure subscription
+azure resource
+azure service
+azure api
+azure function
+azure storage account
+azure database
+azure web app
+azure vm image
+azure role
+minio
+minio port:9000
+minio open
+object storage
+s3 compatible
+vmware
+vmware vcenter
+vmware esxi
+vmware vsan
+vmware nsx
+proxmox
+proxmox port:8006
+opennebula
+opennebula port:4567
+openstack
+openstack port:5000
+openstack keystone
+openshift origin
+openshift pod
+container registry
+container repository
+container image
+container network
+orchestration platform
+orchestration service
+orchestration cluster
+cluster management
+infrastructure as code
+iac
+infrastructure automation
+configuration management
+provisioning
+resource provisioning
+cloud service
+cloud platform
+cloud provider
+cloud infrastructure
+cloud application
+cloud storage
+cloud database
+cloud function
+cloud api
+cloud endpoint
+cloud gateway
+cloud balancer
+cloud load
+load balancer
+load balancing
+traffic management
+traffic balancing
+reverse proxy
+proxy server
+api gateway
+api proxy
+
+# ===== NETWORK SERVICES (Queries 801-900) =====
+dns
+dns port:53
+dns open
+dns "DNS"
+dns resolution
+dns query
+dns server
+dns service
+dns port 53
+smtp
+smtp port:25
+smtp open
+smtp "SMTP"
+smtp country:US
+ftp
+ftp port:21
+ftp open
+ftp "FTP"
+ftp authenticated:false
+sftp
+sftp port:22
+sftp open
+rsync
+rsync port:873
+rsync open
+ntp
+ntp port:123
+ntp "NTP"
+ntp stratum
+snmp
+snmp port:161
+snmp open
+snmp community
+snmp "SNMP"
+tftp
+tftp port:69
+tftp open
+syslog
+syslog port:514
+syslog open
+kerberos
+kerberos port:88
+kerberos realm
+ldap
+ldap port:389
+ldap open
+ldap "LDAP"
+ldaps
+ldaps port:636
+radius
+radius port:1812
+tacacs
+tacacs port:49
+diameter
+corba
+rpc
+rpc port:111
+rpc service
+soap
+soap port:8080
+soap service
+http service
+https service
+http protocol
+https protocol
+http api
+https api
+rest api
+restful api
+graphql
+graphql port:3000
+grpc
+protobuf
+thrift
+thrift port:9090
+zeromq
+zmq
+amqp
+amqp port:5672
+mqtt
+mqtt port:1883
+mqtt broker
+websocket
+websocket port:8080
+network protocol
+network service
+network socket
+network traffic
+network communication
+network transmission
+network layer
+transport layer
+application layer
+protocol handler
+protocol server
+protocol service
+protocol listener
+port service
+port listener
+port open
+available service
+running service
+open service
+active service
+listening port
+listening service
+network open
+network service open
+service enumeration
+service discovery
+service registry
+name resolution
+name server
+name service
+
+# ===== MONITORING & LOGGING (Queries 901-1050) =====
+nagios
+nagios port:6556
+nagios open
+nagios "Nagios"
+zabbix
+zabbix port:10050
+zabbix agent
+zabbix server
+prometheus
+prometheus port:9090
+prometheus metrics
+alertmanager
+alertmanager port:9093
+grafana
+grafana port:3000
+grafana dashboard
+influxdb
+influxdb port:8086
+timeseries
+timeseries database
+telegraf
+collectd
+collectd port:25826
+fluentd
+logstash
+logstash port:5000
+logstash port:9600
+elasticsearch
+ELK stack
+splunk
+splunk forwarder
+splunk index
+graylog
+graylog port:9000
+papertrail
+sumo logic
+datadog
+datadog agent
+new relic
+sentry
+dynatrace
+dynatrace host
+elastic
+elastic agent
+auditbeat
+auditd
+sysstat
+sar
+vmstat
+iostat
+netstat
+wireshark
+tcpdump
+sniffing
+packet capture
+packet sniffing
+traffic capture
+traffic analysis
+flow analysis
+network monitoring
+network analysis
+performance monitoring
+health monitoring
+resource monitoring
+metric collection
+metric aggregation
+metric visualization
+time series
+time-series
+histogram
+histogram bucket
+counter
+gauge
+log management
+log aggregation
+log collection
+log forwarding
+log shipping
+log processing
+log filtering
+log search
+log analysis
+log parsing
+structured logging
+json logging
+event logging
+event processing
+event correlation
+event stream
+stream processing
+stream analytics
+real-time analytics
+real-time monitoring
+monitoring dashboard
+monitoring alert
+monitoring notification
+monitoring system
+monitoring infrastructure
+monitoring stack
+observability
+observability platform
+distributed tracing
+trace collection
+trace analysis
+appdynamics
+new relic apm
+elastic apm
+datadog apm
+dynatrace apm
+zipkin
+jaeger
+honeycomb
+splunk apm
+application insights
+cloudwatch
+aws cloudwatch
+azure monitor
+google cloud monitoring
+stackdriver
+
+# ===== SSL & CERTIFICATES (Queries 1051-1125) =====
+ssl certificate
+ssl.cert.expired:true
+ssl.cert.valid:false
+ssl.cert.self-signed:true
+ssl.cert.ca:false
+ssl weak cipher
+ssl tls
+ssl protocol
+ssl port:443
+https port:443
+https open
+https service
+tls port:443
+tls version
+tls cipher
+tls certificate
+certificate authority
+certificate expired
+certificate invalid
+certificate self-signed
+certificate authority unknown
+certificate verification failed
+certificate chain error
+certificate error
+certificate warning
+certificate alert
+certificate validation
+certificate validation failed
+certificate validation error
+certificate pinning
+certificate pinning failed
+certificate pinning bypass
+key exchange
+symmetric encryption
+asymmetric encryption
+rsa
+rsa 2048
+rsa 4096
+rsa weak
+rsa breakable
+ec
+ecdsa
+ecdh
+diffie-hellman
+dh
+dh weak
+dh 768
+dh 1024
+md5
+sha1
+sha256
+sha384
+sha512
+hash weak
+hash collision
+hash vulnerable
+cipher suite
+cipher strength
+cipher weak
+cipher export
+cipher null
+cipher anonymous
+cipher authentication
+tls 1.0
+tls 1.1
+tls 1.2
+tls 1.3
+ssl v2
+ssl v3
+protocol weak
+protocol version
+protocol downgrade
+protocol downgrade attack
+heartbleed
+poodle
+freak
+logjam
+drown
+crime
+beast
+lucky13
+padding oracle
+padding oracle attack
+compression attack
+deflate
+gzip compression
+cache poisoning
+cache attack
+cache vulnerability
+certificate pinning
+public key pinning
+hpkp
+hsts
+strict-transport-security
+secure cookie
+httponly cookie
+samesite cookie
+cookie secure
+cookie httponly
+cookie domain
+cookie path
+security header
+security headers
+x-frame-options
+x-content-type-options
+x-xss-protection
+content-security-policy
+csp
+csp violation
+csp bypass
+csp report
+
+# ===== DEVELOPMENT & BUILD (Queries 1126-1225) =====
+git
+git port:22
+git port:9418
+git repository
+git server
+gitea
+gitea port:3000
+gogs
+gogs port:3000
+subversion
+svn port:3690
+svn server
+mercurial
+hg port:8000
+bazaar
+bzr
+cvs port:2401
+perforce
+p4 port:1666
+fossil
+fossil repository
+tfs
+team foundation
+team foundation server
+artifactory
+artifactory port:8081
+artifactory repository
+artifactory artifact
+nexus
+nexus port:8081
+nexus repository
+nexus artifact
+archiva
+archiva port:8080
+maven repository
+maven central
+gradle cache
+gradle dependencies
+npm registry
+npm port:4873
+npm package
+pip package
+pip repository
+pip port:8080
+ruby gems
+rubygems
+rubygems port:8808
+nuget
+nuget server
+nuget feed
+composer
+composer repository
+packagist
+package manager
+package repository
+package registry
+dependency management
+dependency resolution
+artifact repository
+artifact storage
+binary repository
+build server
+build system
+continuous integration
+ci server
+ci pipeline
+ci workflow
+continuous delivery
+continuous deployment
+cd pipeline
+devops
+devops platform
+devops workflow
+deployment automation
+deployment pipeline
+release management
+version control
+version management
+version repository
+code repository
+source code repository
+source control
+scm
+build artifact
+build output
+build cache
+build log
+build failure
+build success
+build warning
+build error
+build status
+compilation
+compilation error
+compilation warning
+compilation success
+linking
+linking error
+linking warning
+testing
+unit test
+integration test
+full test
+code coverage
+code analysis
+static analysis
+dynamic analysis
+code review
+code quality
+code metrics
+performance testing
+load testing
+stress testing
+security testing
+penetration testing
+vulnerability scanning
+fuzz testing
+monkey testing
+black box testing
+white box testing
+grey box testing
+
+# ===== BACKUP & DISASTER RECOVERY (Queries 1226-1300) =====
+veeam
+veeam backup
+veeam port:9392
+commvault
+commvault port:443
+veritas
+veritas netbackup
+netbackup port:1571
+bacula
+bacula port:9102
+backup server
+backup service
+backup solution
+backup protocol
+backup client
+backup agent
+backup configuration
+backup job
+backup schedule
+backup repository
+backup storage
+backup vault
+backup archive
+backup retention
+backup recovery
+disaster recovery
+dr plan
+dr test
+dr failover
+dr replication
+high availability
+ha cluster
+ha failover
+ha replication
+acronis
+acronis backup
+arcserve
+arcserve backup
+arcserve udp
+arcserve port:7600
+backblaze
+carbonite
+crashplan
+mozy
+idrive
+backupify
+zmanda
+zmanda amanda
+amanda port:10080
+rsnapshot
+bacula backup
+backup solution
+backup management
+backup administration
+backup configuration
+backup scheduling
+backup infrastructure
+backup acceleration
+backup deduplication
+backup encryption
+backup verification
+backup validation
+backup restore
+backup recovery
+restore job
+restore operation
+restore procedure
+restore test
+recovery procedure
+recovery plan
+recovery point
+recovery time
+rpo
+rto
+incremental backup
+differential backup
+full backup
+mirror backup
+snapshot
+snapshot backup
+snapshot management
+snapshot restore
+replication
+replication job
+replication schedule
+replication policy
+replication lag
+journaling
+transaction log
+binary log
+change tracking
+change data capture
+cdc
+
+# ===== INDUSTRIAL CONTROL & SCADA (Queries 1301-1400) =====
+scada
+scada system
+scada port
+scada controller
+scada server
+scada gateway
+scada device
+plc
+programmable logic
+plc port
+plc controller
+ics
+industrial control
+industrial system
+industrial control system
+critical infrastructure
+infrastructure control
+process control
+automation control
+industrial automation
+factory automation
+building automation
+hvac
+smart building
+smart factory
+smart grid
+energy management
+power management
+power system
+electrical grid
+water treatment
+sewage treatment
+waste management
+chemical plant
+manufacturing
+manufacturing control
+production control
+production line
+assembly line
+robot arm
+industrial robot
+cnc machine
+machinery
+equipment control
+equipment management
+modbus
+modbus port:502
+profibus
+profibus port
+canbus
+can port
+dnp3
+dnp3 port:20000
+melsec
+mitsubishi plc
+siemens plc
+siemens s7
+s7comm
+siemens step
+beckhoff
+beckhoff port:851
+rockwell
+rockwell port:44818
+ge automation
+ge port:20000
+schneider electric
+schneider port
+telemecanique
+phoenix contact
+phoenix contact port
+phoenix wemos
+port:20000
+port:20001
+port:20002
+port:44818
+port:502
+port:1911-1920
+port:1962
+port:4840
+port:5020
+port:7680
+port:8234
+port:8260
+port:9600
+industrial protocol
+industrial port
+industrial device
+ot network
+operational technology
+critical asset
+critical system
+critical process
+critical infrastructure
+process critical
+safety critical
+mission critical
+real-time control
+real-time system
+hard real-time
+soft real-time
+finite state machine
+state machine
+logic controller
+discrete control
+process automation
+process integration
+machine learning iot
+distributed control
+remote control remote
+monitoring industrial
+supervisory control
+data acquisition
+
+# ===== IOT & EMBEDDED SYSTEMS (Queries 1401-1500) =====
+arduino
+arduino port:3000
+arduino open
+raspberry pi
+raspberry pi port
+rpi port
+arm processor
+arm cortex
+arm embedded
+intel edison
+intel curie
+beaglebone
+beaglebone port
+orange pi
+orange pi port
+fpga
+fpga port
+cpld
+zigbee
+zigbee port:15000
+zigbee coordinator
+z-wave
+zwave
+zwave port:8080
+thread
+thread border router
+matter
+matter port
+ble
+bluetooth
+bluetooth port
+ble port
+btle
+low energy
+wifi
+wifi ssid
+wifi password
+wifi open
+wifi wep
+wifi wpa
+wifi wpa2
+wifi wpa3
+lora
+lorawan
+lorawan gateway
+lorawan port:8080
+mqtt
+mqtt port:1883
+mqtt broker
+mqtt client
+mqtt publish
+mqtt subscribe
+amqp
+amqp port:5672
+coap
+coap port:5683
+dtls
+dtls port:5684
+lwm2m
+lwm2m port:5683
+nbiot
+nbiot port
+cellular
+cellular port
+4g
+5g
+5g port
+iot device
+iot sensor
+iot actuator
+iot controller
+iot gateway
+iot hub
+iot platform
+iot service
+iot application
+iot cloud
+iot edge
+edge computing
+edge device
+embedded system
+embedded device
+embedded linux
+embedded arm
+embedded port
+firmware
+firmware version
+firmware update
+firmware upgrade
+bootloader
+bootloader port
+uboot
+uboot port
+real-time operating system
+rtos
+freertos
+freertos port
+vxworks
+vxworks port
+qnx
+qnx port
+microkernel
+microkernel port
+bare metal
+bare metal port
+smart device
+smart home
+smart home hub
+smart home gateway
+smart home controller
+smart home device
+alexa
+alexa port
+google home
+google home port
+apple siri
+siri port
+homekit
+homekit port
+z-wave device
+zigbee device
+smart speaker
+smart display
+smart bulb
+smart plug
+smart thermostat
+smart lock
+smart camera
+smart doorbell
+security camera
+ip camera
+webcam
+webcam port:8080
+
+# ===== HEALTHCARE & MEDICAL (Queries 1501-1600) =====
+epic
+epic port:8080
+epic open
+cerner
+cerner port
+openmrs
+openmrs port:8080
+openeyes
+openeyes port
+pacs
+pacs port
+lis
+labware
+lis port
+his
+hospital information
+hospital system
+hospital network
+hospital server
+medical records
+medical imaging
+medical device
+medical sensor
+patient management
+patient portal
+patient data
+clinical data
+ehr
+electronic health
+emr
+electronic medical
+cdss
+clinical decision
+hospital management
+clinic management
+clinic system
+clinic portal
+practice management
+provider portal
+physician portal
+nurse portal
+patient portal
+telemedicine
+telemedicine port
+telehealth
+telehealth port
+remote patient
+remote monitoring
+home health
+home care
+assisted living
+long-term care
+rehabilitation
+therapy management
+pharmacy
+pharmacy management
+pharmacy system
+pharmacy port
+medication
+medication management
+medication error
+medication safety
+prescription
+prescription management
+dosing
+drug interaction
+clinical trial
+clinical research
+research management
+research data
+research portal
+biomedical
+biomedical device
+biomedical signal
+biomedical data
+wearable device
+wearable health
+fitness tracker
+activity tracker
+health monitoring
+vital signs
+heart rate
+blood pressure
+blood glucose
+oxygen saturation
+ecg
+ekg
+eeg
+emg
+ultrasound
+mri
+ct scan
+x-ray
+radiology
+pathology
+lab test
+lab result
+specimen
+specimen management
+specimen tracking
+specimen preservation
+quality management
+quality assurance
+quality control
+lab quality
+clinical quality
+care quality
+safety quality
+
+# ===== COMMON PORTS (Queries 1601-1750) =====
+port:22
+port:23
+port:25
+port:53
+port:80
+port:110
+port:143
+port:443
+port:445
+port:465
+port:587
+port:563
+port:989
+port:990
+port:992
+port:993
+port:995
+port:1433
+port:1521
+port:2049
+port:3000
+port:3306
+port:3389
+port:5000
+port:5432
+port:5900
+port:6379
+port:6783
+port:7001
+port:8000
+port:8008
+port:8009
+port:8080
+port:8081
+port:8082
+port:8083
+port:8084
+port:8085
+port:8086
+port:8087
+port:8088
+port:8089
+port:8090
+port:8091
+port:8092
+port:8093
+port:8094
+port:8095
+port:8096
+port:8097
+port:8098
+port:8099
+port:8100
+port:8443
+port:8888
+port:9000
+port:9001
+port:9090
+port:9091
+port:9092
+port:9093
+port:9094
+port:9095
+port:9096
+port:9097
+port:9098
+port:9099
+port:9100
+port:9200
+port:9300
+port:10000
+port:10050
+port:27017
+port:27018
+port:27019
+port:50070
+port:8042
+port:4242
+port:5601
+port:6443
+port:7680
+port:8879
+port:20000
+port:8081 http.status:200
+port:8080 http.status:200
+port:3000 http.status:200
+port:9000 http.status:200
+port:9090 http.status:200
+port:5000 http.status:200
+port:8000 http.status:200
+port:3389 open
+port:22 open
+port:80 open
+port:443 open
+port:8080 open
+port:3000 open
+port:5432 open
+port:3306 open
+port:27017 open
+port:6379 open
+port:9200 open
+port:139 open
+port:445 open
+port:111 open
+
+# ===== GEOGRAPHICAL QUERIES (Queries 1751-1850) =====
+country:US
+country:CN
+country:RU
+country:GB
+country:DE
+country:JP
+country:IN
+country:BR
+country:AU
+country:CA
+country:FR
+country:IT
+country:ES
+country:MX
+country:KR
+country:NL
+country:CH
+country:SE
+country:NO
+country:DK
+country:FI
+country:PL
+country:CZ
+country:RO
+country:UA
+country:TW
+country:SG
+country:HK
+country:TH
+country:VN
+country:PH
+country:MY
+country:ID
+country:ZA
+country:NG
+country:EG
+country:IL
+country:AE
+country:SA
+country:TR
+country:AR
+country:CL
+country:CO
+country:PE
+country:NZ
+country:US port:80
+country:US port:443
+country:US port:3000
+country:US port:8080
+country:CN port:80
+country:CN port:443
+country:RU port:22
+country:RU port:3389
+country:GB port:80
+country:DE port:80
+country:JP port:80
+country:IN port:3306
+country:US http.status:200
+country:CN http.status:200
+country:RU http.status:200
+country:GB http.status:200
+country:DE http.status:200
+organization:amazon
+organization:google
+organization:microsoft
+organization:apple
+organization:ibm
+organization:oracle
+organization:cisco
+organization:vmware
+organization:nokia
+organization:intel
+organization:qualcomm
+organization:broadcom
+organization:nxp
+organization:stm
+organization:arm
+organization:marvell
+organization:xilinx
+organization:altera
+organization:atmel
+organization:microchip
+organization:renesas
+organization:infineon
+
+# ===== VULNERABILITIES & SECURITY ISSUES (Queries 1851-2000) =====
+port:3000 http.status:200
+product:"Node.js"
+cgi-bin authenticated:false
+http.robots "Disallow"
+http.title:"Dashboard" port:3000
+ssl.cert.expired:true
+elasticsearch open
+vulnerability
+vulnerable
+cve
+cve-2024
+cve-2023
+cve-2022
+exploit
+exploit code
+exploit available
+metasploit
+shodan
+default credentials
+weak password
+weak encryption
+default password
+default username
+default account
+default configuration
+default settings
+misconfigurated
+misconfigured
+misconfiguration
+weak security
+security flaw
+security issue
+security weakness
+security vulnerability
+security hole
+security risk
+security threat
+security breach
+data exposure
+data leak
+data breach
+sensitive data
+credit card
+ssn
+api key
+api secret
+private key
+secret key
+encryption key
+master key
+access key
+session key
+token
+bearer token
+api token
+oauth token
+auth token
+jwt token
+jwt secret
+jwt key
+jwt algorithm
+jwt algorithm:none
+jwt algorithm:hs256
+jwt vulnerable
+jwt weak
+jwt bypass
+jwt forged
+authentication bypass
+authentication failure
+authentication error
+authorization bypass
+authorization failure
+authorization error
+access control
+access control bypass
+privilege escalation
+privilege escalation vector
+dos
+dos vector
+dos attack
+ddos
+ddos vector
+ddos attack
+ddos reflected
+ddos amplified
+injection
+sql injection
+command injection
+code injection
+path traversal
+directory traversal
+xxe
+xml external
+xxe injection
+xpath injection
+ldap injection
+os injection
+parser injection
+eval injection
+include injection
+require injection
+require_once injection
+unserialize injection
+deserialize injection
+xss
+xss vulnerability
+xss reflected
+xss stored
+xss dom
+csrf
+csrf vulnerability
+csrf token
+csrf missing
+csrf weak
+cross-site scripting
+cross-site request
+cross-origin
+cors
+cors bypass
+cors misconfigured
+cors origin
+cors header
+same-origin
+same-site
+samesite
+http strict transport
+hsts
+hsts header
+hsts missing
+content security policy
+csp
+csp header
+csp bypass
+csp report
+csp violation
+csp enforced
+csp report-only
+csp nonce
+csp hash
+csp script-src
+csp style-src
+csp img-src
+csp font-src
+csp connect-src
+csp frame-src
+framebacking
+clickjacking
+ui redressing
+x-frame-options
+x-frame-options deny
+x-frame-options sameorigin
+x-frame-options allow-from
+x-content-type-options
+x-content-type-options nosniff
+x-xss-protection
+x-xss-protection 1; mode=block
+referrer policy
+referrer-policy
+referrer-policy no-referrer
+permissions policy
+feature policy
+feature-policy
+permission-policy
+public-key-pins
+hpkp
+hpkp header
+hpkp bypass
+cache-control
+cache-control no-cache
+cache-control no-store
+cache-control private
+cache-control public
+cache-control max-age
+etag
+if-modified-since
+if-none-match
+expires
+last-modified
+set-cookie
+secure cookie
+httponly cookie
+samesite cookie
+cookie domain
+cookie path
+cookie lifetime
+cookie scope
+cookie expiration
+session fixation
+session hijacking
+session prediction
+session timeout
+weak session
+session id
+session token
+session management
+rate limiting
+rate limit
+rate limited
+rate limiter
+brute force
+brute force protection
+brute force attack
+brute force resistance
+account lockout
+account suspension
+failed login
+failed authentication
+excessive login
+login attempt
+password policy
+password complexity
+password strength
+password entropy
+password dictionary
+password hash
+password hash
+password hash weak
+password hash algorithm
+password hash function
+password hash iteration
+password bcrypt
+password scrypt
+password argon
+password pbkdf
+password md5
+password sha
+password sha1
+password sha256
+password sha512
+hash collision
+hash function
+hash vulnerable
+hash breakable
+salt
+salt length
+salt generation
+salt weak
+salt reuse
+salt collision
+rainbow table
+rainbow table attack
+password cracking
+dictionary attack
+permutation attack
+combinatorial attack
+entropy evaluation
