@@ -27,6 +27,40 @@
 > ⚠️ **DANGEROUS**: This tool is designed for authorized security professionals only. Misuse is illegal.
 
 ---
+<h3 align="center"><code> 📍 Team Operations: Pakistan 🇵🇰 </code></h3>
+
+<div align="center">
+  <table border="0">
+    <tr>
+      <td align="center">
+        <a href="https://github.com/mohid0x01">
+          <img src="https://github.com/mohid0x01.png" width="80px;" style="border-radius:50%" alt="[r00t:~#]"/><br />
+          <sub><b> [r00t:~#] (Lead)</b></sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/rehan-qx">
+          <img src="https://github.com/rehan-qx.png" width="80px;" style="border-radius:50%" alt="n1xr00t"/><br />
+          <sub><b> n1xr00t (Core)</b></sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Bahawal-Ali-Official">
+          <img src="https://github.com/Bahawal-Ali-Official.png" width="80px;" style="border-radius:50%" alt="zero_trst"/><br />
+          <sub><b>zero_trst (Core)</b></sub>
+        </a>
+      </td>
+            <td align="center">
+        <a href="https://github.com/muhammadtaharana">
+          <img src="https://github.com/muhammadtaharana.png" width="80px;" style="border-radius:50%" alt="2.0"/><br />
+          <sub><b>2.0²·⁰ (Core)</b></sub>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br>
 
 ## 📑 DOCUMENTATION INDEX
 
@@ -353,41 +387,6 @@ All documentation is organized in the `doc/` folder:
 **Explore all APIs?** → [85+ API Endpoints](doc/APIs.md)
 
 
-<h3 align="center"><code> 📍 Team Operations: Pakistan 🇵🇰 </code></h3>
-
-<div align="center">
-  <table border="0">
-    <tr>
-      <td align="center">
-        <a href="https://github.com/mohid0x01">
-          <img src="https://github.com/mohid0x01.png" width="80px;" style="border-radius:50%" alt="[r00t:~#]"/><br />
-          <sub><b> [r00t:~#] (Lead)</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/rehan-qx">
-          <img src="https://github.com/rehan-qx.png" width="80px;" style="border-radius:50%" alt="n1xr00t"/><br />
-          <sub><b> n1xr00t (Core)</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/Bahawal-Ali-Official">
-          <img src="https://github.com/Bahawal-Ali-Official.png" width="80px;" style="border-radius:50%" alt="zero_trst"/><br />
-          <sub><b>zero_trst (Core)</b></sub>
-        </a>
-      </td>
-            <td align="center">
-        <a href="https://github.com/muhammadtaharana">
-          <img src="https://github.com/muhammadtaharana.png" width="80px;" style="border-radius:50%" alt="2.0"/><br />
-          <sub><b>2.0²·⁰ (Core)</b></sub>
-        </a>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<br>
-
 <br>
 
 <div align="center">
@@ -397,6 +396,7 @@ All documentation is organized in the `doc/` folder:
     TEAM: [r00t:~#] | n1xr00t | zero_trst | 2.0²·⁰ <br>
     -----END PGP SIGNATURE-----
   </p>
+
 
 
 
