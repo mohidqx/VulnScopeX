@@ -1,3 +1,25 @@
+<div align="center">
+
+<img src="https://avatars.githubusercontent.com/u/89724864?s=400&v=4" width="150" style="border-radius: 50%; box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);" alt="TeamCyberOps Logo" />
+<br>
+<img src="https://readme-typing-svg.herokuapp.com?font=monospace&weight=200&size=40&duration=3000&pause=1000&color=808080&background=00000000&center=true&vCenter=true&width=900&lines=Welcome+to+VulnScopeX+by+TeamCyberOps" alt="Glitch Header" style="margin-bottom: -10px;" />
+
+<br>
+
+<p align="center">
+  <a href="">
+    <img src="https://img.shields.io/badge/SYSTEM-ONLINE-000?style=for-the-badge&logo=linux&logoColor=white&labelColor=0a0a0a" alt="System Online">
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/badge/SECURITY-OFFENSIVE-000?style=for-the-badge&logo=kali-linux&logoColor=white&labelColor=0a0a0a" alt="Security Offensive">
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/badge/ENCRYPTION-AES_256-000?style=for-the-badge&logo=gnu-privacy-guard&logoColor=white&labelColor=0a0a0a" alt="Encryption">
+  </a>
+</p>
+
+<br>
+
 # 🔥 SHODAN VulnScopeX v6.0 ULTIMATE by TeamCyberOps
 
 **Enterprise Vulnerability Scanner + 85+ REST APIs + Real-Time CLI GUI + Advanced Exploitation**
@@ -329,4 +351,5 @@ All documentation is organized in the `doc/` folder:
 **Ready to get started?** → [Installation Guide](doc/INSTALLATION.md)  
 **Want quick access?** → [60-Second Quick Start](doc/QUICKSTART.md)  
 **Explore all APIs?** → [85+ API Endpoints](doc/APIs.md)
+
 
