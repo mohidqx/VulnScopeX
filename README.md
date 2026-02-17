@@ -19,8 +19,8 @@
 </p>
 
 <br>
-
-# 🔥 SHODAN VulnScopeX v6.0 ULTIMATE by TeamCyberOps
+</div>
+# 🔥 SHODAN VulnScopeX v6.0
 
 **Enterprise Vulnerability Scanner + 85+ REST APIs + Real-Time CLI GUI + Advanced Exploitation**
 
@@ -351,5 +351,6 @@ All documentation is organized in the `doc/` folder:
 **Ready to get started?** → [Installation Guide](doc/INSTALLATION.md)  
 **Want quick access?** → [60-Second Quick Start](doc/QUICKSTART.md)  
 **Explore all APIs?** → [85+ API Endpoints](doc/APIs.md)
+
 
 
