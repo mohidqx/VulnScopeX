@@ -377,7 +377,7 @@ All documentation is organized in the `doc/` folder:
         </a>
       </td>
             <td align="center">
-        <a href="https://github.com/mtr-x-cyberops">
+        <a href="https://github.com/muhammadtaharana">
           <img src="https://github.com/muhammadtaharana.jpg" width="80px;" style="border-radius:50%" alt="2.0"/><br />
           <sub><b>2.0²·⁰ (Core)</b></sub>
         </a>
@@ -397,4 +397,5 @@ All documentation is organized in the `doc/` folder:
     TEAM: [r00t:~#] | n1xr00t | zero_trst | 2.0²·⁰ <br>
     -----END PGP SIGNATURE-----
   </p>
+
 
